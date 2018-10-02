@@ -8,13 +8,22 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
 
-  String _name;
-  String _email;
-  String _password;
-  String _confirm;
+  String _name = "";
+  String _email = "";
+  String _password = "";
+  String _confirm = "";
 
   void register() async {
-    if (_confirm == _password || _name != "" || _email != "") {
+    if (_name == "") {
+      print("Name cannot be empty");
+    }
+    else if (_password != _confirm) {
+      print("Password don't match");
+    }
+    else if (_email == "") {
+      print("Email cannot be empty");
+    }
+    else {
       try {
         FirebaseUser user = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: _email, password: _password);
@@ -23,9 +32,6 @@ class _RegisterPageState extends State<RegisterPage> {
       catch (error) {
         print("Error: $error");
       }
-    }
-    else {
-      print("Missing info");
     }
   }
 
