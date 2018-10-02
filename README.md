@@ -1,8 +1,3 @@
-# vc_deca
+# VC-DECA
 
-A new Flutter project.
-
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+An iOS + Android App to be utilized by the Valley Christian Chapter of DECA created using the Flutter framework and Dart.
