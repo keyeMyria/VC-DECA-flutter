@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:vc_deca/user_info.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -12,6 +14,8 @@ class _RegisterPageState extends State<RegisterPage> {
   String _email = "";
   String _password = "";
   String _confirm = "";
+
+  final databaseRef = FirebaseDatabase.instance.reference();
 
   void register() async {
     if (_name == "") {
@@ -28,6 +32,20 @@ class _RegisterPageState extends State<RegisterPage> {
         FirebaseUser user = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: _email, password: _password);
         print("Signed in! ${user.uid}");
+
+        name = _name;
+        email = _email;
+        userID = user.uid;
+        role = "user";
+
+        databaseRef.child("users").child(userID).update({
+          "name": name,
+          "email": email,
+          "role": role,
+          "userID": userID
+        });
+
+        Navigator.of(context).pushReplacementNamed('/registered');
       }
       catch (error) {
         print("Error: $error");
@@ -55,6 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlue,
         title: Text(
           "VC DECA",
           style: TextStyle(
@@ -122,6 +141,19 @@ class _RegisterPageState extends State<RegisterPage> {
                 color: Colors.lightBlue,
                 textColor: Colors.white,
                 highlightColor: Colors.lightBlueAccent,
+              ),
+              new Padding(padding: EdgeInsets.all(16.0)),
+              new FlatButton(
+                child: new Text(
+                  "Already have an account?",
+                  style: TextStyle(
+                    color: Colors.lightBlue,
+                  ),
+                ),
+                splashColor: Colors.lightBlueAccent,
+                onPressed: () {
+
+                },
               )
             ],
           ),

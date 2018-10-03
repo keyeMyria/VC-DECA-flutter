@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:vc_deca/register_page.dart';
 import 'package:vc_deca/tab_bar_controller.dart';
 import 'dart:async';
 
-class WelcomePage extends StatefulWidget {
+class AuthChecker extends StatefulWidget {
   @override
-  _WelcomePageState createState() => _WelcomePageState();
+  _AuthCheckerState createState() => _AuthCheckerState();
 }
 
-class _WelcomePageState extends State<WelcomePage> {
+class _AuthCheckerState extends State<AuthChecker> {
 
   Future<void> checkUserLogged() async {
     var user = await FirebaseAuth.instance.currentUser();
@@ -35,16 +36,6 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: new Center(
-        child: new Text(
-          "Loading...",
-          style: new TextStyle(
-            color: Colors.black,
-            fontSize: 35.0,
-            decoration: TextDecoration.none
-          ),
-        ),
-      ),
     );
   }
 }

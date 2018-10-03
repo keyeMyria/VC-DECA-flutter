@@ -5,6 +5,7 @@ import 'package:vc_deca/setting_page.dart';
 import 'package:vc_deca/schedule_page.dart';
 import 'package:vc_deca/chat_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:vc_deca/user_drawer.dart';
 
 class TabBarController extends StatefulWidget {
   @override
@@ -13,12 +14,13 @@ class TabBarController extends StatefulWidget {
 
 class _TabBarControllerState extends State<TabBarController> {
 
+  String title = "VC DECA";
+
   PageController pageController;
   int currentTab = 0;
 
   void tabTapped(int index) {
     setState(() {
-      currentTab = index;
       pageController.animateToPage(index, duration: Duration(milliseconds: 100), curve: Curves.easeOut);
     });
   }
@@ -26,6 +28,18 @@ class _TabBarControllerState extends State<TabBarController> {
   void pageChanged(int index) {
     setState(() {
       currentTab = index;
+      if (currentTab == 1) {
+        title = "Schedule";
+      }
+      else if (currentTab == 2) {
+        title = "Chat";
+      }
+      else if (currentTab == 3) {
+        title = "Settings";
+      }
+      else {
+        title = "VC DECA";
+      }
     });
   }
 
@@ -39,7 +53,12 @@ class _TabBarControllerState extends State<TabBarController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: new Text("VC DECA"),
+        title: new Text(
+          title,
+          style: TextStyle(
+              fontWeight: FontWeight.bold
+          ),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -53,12 +72,7 @@ class _TabBarControllerState extends State<TabBarController> {
         ],
       ),
       drawer: Drawer(
-        child: new Center(
-          child: new Column(
-            children: <Widget>[
-            ],
-          ),
-        ),
+        child: UserDrawer(),
       ),
       body: new PageView(
         onPageChanged: pageChanged,

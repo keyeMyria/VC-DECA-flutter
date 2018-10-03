@@ -1,15 +1,35 @@
+import 'dart:async';
+import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:vc_deca/onboarding_page.dart';
 import 'package:vc_deca/register_page.dart';
-import 'package:vc_deca/welcome.dart';
+import 'package:vc_deca/auth_checker.dart';
 import 'package:vc_deca/tab_bar_controller.dart';
 
-void main() {
+Future <void> main() async {
+  final FirebaseApp app = await FirebaseApp.configure(
+    name: 'vc-deca',
+    options: Platform.isIOS
+        ? const FirebaseOptions(
+      googleAppID: '1:946014932243:ios:7ff8d9cacecec349',
+      gcmSenderID: '297855924061',
+      databaseURL: 'https://vc-deca.firebaseio.com',
+    )
+        : const FirebaseOptions(
+      googleAppID: '1:946014932243:android:7ff8d9cacecec349',
+      apiKey: 'AIzaSyD_shO5mfO9lhy2TVWhfo1VUmARKlG4suk',
+      databaseURL: 'https://vc-deca.firebaseio.com',
+    ),
+  );
+
   runApp(new MaterialApp(
     title: "VC DECA",
-    home: WelcomePage(),
+    home: AuthChecker(),
     routes: <String, WidgetBuilder> {
       '/logged': (BuildContext context) => new TabBarController(),
-      '/notLogged' : (BuildContext context) => new RegisterPage()
+      '/notLogged' : (BuildContext context) => new OnboardingPage(),
+      '/registered': (BuildContext context) => new TabBarController(),
     },
     debugShowCheckedModeBanner: false,
   ));
