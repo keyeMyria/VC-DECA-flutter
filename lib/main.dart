@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:vc_deca/login.dart';
 import 'package:vc_deca/onboarding_page.dart';
 import 'package:vc_deca/register_page.dart';
 import 'package:vc_deca/auth_checker.dart';
@@ -29,7 +30,8 @@ Future <void> main() async {
     routes: <String, WidgetBuilder> {
       '/logged': (BuildContext context) => new TabBarController(),
       '/notLogged' : (BuildContext context) => new OnboardingPage(),
-      '/toLogin' : (BuildContext context) => new RegisterPage(),
+      '/toRegister' : (BuildContext context) => new RegisterPage(),
+      '/toLogin' : (BuildContext context) => new LoginPage(),
       '/registered': (BuildContext context) => new TabBarController(),
     },
     debugShowCheckedModeBanner: false,

@@ -86,7 +86,7 @@ class _RegisterPageState extends State<RegisterPage> {
         child: new Center(
           child: new Column(
             children: <Widget>[
-              new Text("Create your VC DECA Acoount below!"),
+              new Text("Create your VC DECA Account below!"),
               new Padding(padding: EdgeInsets.all(8.0)),
               new TextField(
                 decoration: InputDecoration(
@@ -152,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 splashColor: Colors.lightBlueAccent,
                 onPressed: () {
-
+                  Navigator.of(context).pushReplacementNamed('/toLogin');
                 },
               )
             ],

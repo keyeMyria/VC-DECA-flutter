@@ -56,7 +56,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       body: Text(
         'Find event locations quickly with our built-in maps',
       ),
-      title: Text('Alerts'),
+      title: Text('Maps'),
       mainImage: Image.asset(
         'images/map.png',
         height: 285.0,
@@ -73,7 +73,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       body: Text(
         'Easy access from all your favorite devices',
       ),
-      title: Text('Alerts'),
+      title: Text('Multi-Platform'),
       mainImage: Image.asset(
         'images/platform.png',
         height: 285.0,
@@ -107,7 +107,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return new IntroViewsFlutter(
       pages,
       onTapDoneButton: () {
-        Navigator.of(context).pushReplacementNamed('/toLogin');
+        Navigator.of(context).pushReplacementNamed('/toRegister');
       },
       showSkipButton:
       false, //Whether you want to show the skip button or not.

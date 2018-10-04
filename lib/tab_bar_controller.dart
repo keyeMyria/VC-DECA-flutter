@@ -13,7 +13,6 @@ class TabBarController extends StatefulWidget {
 }
 
 class _TabBarControllerState extends State<TabBarController> {
-
   String title = "VC DECA";
 
   PageController pageController;
@@ -21,7 +20,8 @@ class _TabBarControllerState extends State<TabBarController> {
 
   void tabTapped(int index) {
     setState(() {
-      pageController.animateToPage(index, duration: Duration(milliseconds: 100), curve: Curves.easeOut);
+      pageController.animateToPage(index,
+          duration: Duration(milliseconds: 10), curve: Curves.easeOut);
     });
   }
 
@@ -30,14 +30,11 @@ class _TabBarControllerState extends State<TabBarController> {
       currentTab = index;
       if (currentTab == 1) {
         title = "Schedule";
-      }
-      else if (currentTab == 2) {
+      } else if (currentTab == 2) {
         title = "Chat";
-      }
-      else if (currentTab == 3) {
+      } else if (currentTab == 3) {
         title = "Settings";
-      }
-      else {
+      } else {
         title = "VC DECA";
       }
     });
@@ -52,38 +49,46 @@ class _TabBarControllerState extends State<TabBarController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: new Text(
-          title,
-          style: TextStyle(
-              fontWeight: FontWeight.bold
+        appBar: AppBar(
+          backgroundColor: Colors.lightBlue,
+          elevation: 0.0,
+          title: new Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentTab,
-        onTap: tabTapped,
-        items: [
-          new BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), title: Text("Home")),
-          new BottomNavigationBarItem(icon: Icon(CupertinoIcons.collections), title: Text("Schedule")),
-          new BottomNavigationBarItem(icon: Icon(CupertinoIcons.conversation_bubble), title: Text("Chat")),
-          new BottomNavigationBarItem(icon: Icon(CupertinoIcons.settings), title: Text("Settings")),
-        ],
-      ),
-      drawer: Drawer(
-        child: UserDrawer(),
-      ),
-      body: new PageView(
-        onPageChanged: pageChanged,
-        controller: pageController,
-        children: <Widget>[
-          HomePage(),
-          SchedulePage(),
-          ChatPage(),
-          SettingsPage()
-        ],
-      ),
-    );
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: currentTab,
+          onTap: tabTapped,
+          items: [
+            new BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.home), title: Text("Home")),
+            new BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.collections),
+                title: Text("Schedule")),
+            new BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.conversation_bubble),
+                title: Text("Chat")),
+            new BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.settings), title: Text("Settings")),
+          ],
+        ),
+        drawer: Drawer(
+          child: UserDrawer(),
+        ),
+        body: new Container(
+          color: Colors.lightBlue,
+          child: new PageView(
+            onPageChanged: pageChanged,
+            controller: pageController,
+            children: <Widget>[
+              HomePage(),
+              SchedulePage(),
+              ChatPage(),
+              SettingsPage()
+            ],
+          ),
+        ));
   }
 }
