@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:vc_deca/login.dart';
+import 'package:vc_deca/network_checker.dart';
 import 'package:vc_deca/onboarding_page.dart';
 import 'package:vc_deca/register_page.dart';
 import 'package:vc_deca/auth_checker.dart';
@@ -26,8 +27,10 @@ Future <void> main() async {
 
   runApp(new MaterialApp(
     title: "VC DECA",
-    home: AuthChecker(),
+    home: ConnectionChecker(),
     routes: <String, WidgetBuilder> {
+      '/checkConnection': (BuildContext context) => new ConnectionChecker(),
+      '/checkAuth': (BuildContext context) => new AuthChecker(),
       '/logged': (BuildContext context) => new TabBarController(),
       '/notLogged' : (BuildContext context) => new OnboardingPage(),
       '/toRegister' : (BuildContext context) => new RegisterPage(),
