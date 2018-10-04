@@ -8,7 +8,7 @@ class ConnectionChecker extends StatefulWidget {
 }
 
 class _ConnectionCheckerState extends State<ConnectionChecker> {
-  
+
   final connectionRef = FirebaseDatabase.instance.reference().child(".info/connected");
 
   Future<void> checkConnection() async {
@@ -19,6 +19,9 @@ class _ConnectionCheckerState extends State<ConnectionChecker> {
     print(event.snapshot.value);
     if (event.snapshot.value) {
       Navigator.of(context).pushReplacementNamed('/checkAuth');
+    }
+    else {
+      print("you're fucked lol");
     }
   }
 
@@ -37,7 +40,7 @@ class _ConnectionCheckerState extends State<ConnectionChecker> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Image.asset(
-            'images/vcdeca_white_trans.png',
+            'images/vcdeca_blue_trans.png',
           ),
           new Text(
             "Server Connection Error",
@@ -60,6 +63,13 @@ class _ConnectionCheckerState extends State<ConnectionChecker> {
             ),
           ),
           new Padding(padding: EdgeInsets.all(16.0)),
+          new RaisedButton(
+            child: new Text("Force Refresh"),
+            onPressed: () {
+              connectionRef.onValue.listen(connectionListener);
+            },
+            color: Colors.lightBlue,
+          )
         ],
       ),
     );

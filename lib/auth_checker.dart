@@ -5,6 +5,8 @@ import 'package:vc_deca/register_page.dart';
 import 'package:vc_deca/tab_bar_controller.dart';
 import 'dart:async';
 
+import 'package:vc_deca/user_info.dart';
+
 class AuthChecker extends StatefulWidget {
   @override
   _AuthCheckerState createState() => _AuthCheckerState();
@@ -12,11 +14,22 @@ class AuthChecker extends StatefulWidget {
 
 class _AuthCheckerState extends State<AuthChecker> {
 
+  final databaseRef = FirebaseDatabase.instance.reference();
+
   Future<void> checkUserLogged() async {
     var user = await FirebaseAuth.instance.currentUser();
     if (user != null) {
       //User logged in
       print("User Logged");
+      userID = user.uid;
+
+      databaseRef.child("users").child(userID).once().then((DataSnapshot snapshot) {
+        var userInfo = snapshot.value;
+        email = userInfo["email"];
+        role = userInfo["role"];
+        name = userInfo["name"];
+      });
+
       Navigator.of(context).pushReplacementNamed('/logged');
     }
     else {

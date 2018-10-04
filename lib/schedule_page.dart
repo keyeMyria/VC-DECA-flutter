@@ -11,7 +11,6 @@ class _SchedulePageState extends State<SchedulePage> {
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(16.0), topRight: Radius.circular(16.0))
       ),
       child: Center(
           child: new Text("Schedule Page")

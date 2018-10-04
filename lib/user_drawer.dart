@@ -33,6 +33,9 @@ class _UserDrawerState extends State<UserDrawer> {
         child: Column(
           children: <Widget>[
             new Text("Hello User Drawer!"),
+            new Text(name),
+            new Text(email),
+            new Text("Role: $role"),
             new RaisedButton(
               child: new Text("Sign Out"),
               onPressed: () {
@@ -41,7 +44,7 @@ class _UserDrawerState extends State<UserDrawer> {
               },
             ),
             new RaisedButton(
-              child: new Text("Test Firebase Upload\n$name"),
+              child: new Text("Test Firebase Upload\n$name!"),
               onPressed: testUpload,
             )
           ],

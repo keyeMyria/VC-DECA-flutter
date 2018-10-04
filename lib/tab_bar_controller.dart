@@ -21,7 +21,7 @@ class _TabBarControllerState extends State<TabBarController> {
   void tabTapped(int index) {
     setState(() {
       pageController.animateToPage(index,
-          duration: Duration(milliseconds: 10), curve: Curves.easeOut);
+          duration: Duration(milliseconds: 100), curve: Curves.easeOut);
     });
   }
 
@@ -51,7 +51,6 @@ class _TabBarControllerState extends State<TabBarController> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
-          elevation: 0.0,
           title: new Text(
             title,
             style: TextStyle(fontWeight: FontWeight.bold),
@@ -78,7 +77,7 @@ class _TabBarControllerState extends State<TabBarController> {
           child: UserDrawer(),
         ),
         body: new Container(
-          color: Colors.lightBlue,
+          color: Colors.white,
           child: new PageView(
             onPageChanged: pageChanged,
             controller: pageController,
