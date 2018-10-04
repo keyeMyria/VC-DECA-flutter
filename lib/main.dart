@@ -29,6 +29,7 @@ Future <void> main() async {
     routes: <String, WidgetBuilder> {
       '/logged': (BuildContext context) => new TabBarController(),
       '/notLogged' : (BuildContext context) => new OnboardingPage(),
+      '/toLogin' : (BuildContext context) => new RegisterPage(),
       '/registered': (BuildContext context) => new TabBarController(),
     },
     debugShowCheckedModeBanner: false,

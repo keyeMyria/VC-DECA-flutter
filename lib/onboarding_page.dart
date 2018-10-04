@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vc_deca/register_page.dart';
+import 'package:intro_views_flutter/Models/page_view_model.dart';
+import 'package:intro_views_flutter/intro_views_flutter.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -9,72 +11,110 @@ class OnboardingPage extends StatefulWidget {
 
 class _OnboardingPageState extends State<OnboardingPage> {
 
+  final pages = [
+    new PageViewModel(
+        pageColor: Colors.lightBlue,
+        iconImageAssetPath: 'images/events.png',
+        iconColor: null,
+        bubbleBackgroundColor: null,
+        body: Text(
+          'View conference schedules to keep on top of all your DECA events',
+        ),
+        title: Text(
+          'Events',
+        ),
+        textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
+        mainImage: Image.asset(
+          'images/events.png',
+          height: 285.0,
+          width: 285.0,
+          alignment: Alignment.center,
+        )
+    ),
+    new PageViewModel(
+      pageColor: Colors.lightBlue,
+      iconImageAssetPath: 'images/alert.png',
+      iconColor: null,
+      bubbleBackgroundColor: null,
+      body: Text(
+        'Be notified of imporant updates, including when your next event is about to start',
+      ),
+      title: Text('Alerts'),
+      mainImage: Image.asset(
+        'images/alert.png',
+        height: 285.0,
+        width: 285.0,
+        alignment: Alignment.center,
+      ),
+      textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
+    ),
+    new PageViewModel(
+      pageColor: Colors.lightBlue,
+      iconImageAssetPath: 'images/map.png',
+      iconColor: null,
+      bubbleBackgroundColor: null,
+      body: Text(
+        'Find event locations quickly with our built-in maps',
+      ),
+      title: Text('Alerts'),
+      mainImage: Image.asset(
+        'images/map.png',
+        height: 285.0,
+        width: 285.0,
+        alignment: Alignment.center,
+      ),
+      textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
+    ),
+    new PageViewModel(
+      pageColor: Colors.lightBlue,
+      iconImageAssetPath: 'images/platform.png',
+      iconColor: null,
+      bubbleBackgroundColor: null,
+      body: Text(
+        'Easy access from all your favorite devices',
+      ),
+      title: Text('Alerts'),
+      mainImage: Image.asset(
+        'images/platform.png',
+        height: 285.0,
+        width: 285.0,
+        alignment: Alignment.center,
+      ),
+      textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
+    ),
+    new PageViewModel(
+      pageColor: Colors.lightBlue,
+      iconImageAssetPath: 'images/logo_white_trans.png',
+      iconColor: null,
+      bubbleBackgroundColor: null,
+      body: Text(
+        'Click done to get started!',
+      ),
+      title: Text('Welcome to', textAlign: TextAlign.center,),
+      mainImage: Image.asset(
+        'images/logo_white_trans.png',
+        height: 285.0,
+        width: 285.0,
+        alignment: Alignment.center,
+      ),
+      textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
+    )
+  ];
+
+
   @override
   Widget build(BuildContext context) {
-    return PageView(
-      children: <Widget>[
-        OnboardingOne(),
-        OnboardingTwo(),
-        OnboardingThree(),
-        RegisterPage()
-      ],
+    return new IntroViewsFlutter(
+      pages,
+      onTapDoneButton: () {
+        Navigator.of(context).pushReplacementNamed('/toLogin');
+      },
+      showSkipButton:
+      false, //Whether you want to show the skip button or not.
+      pageButtonTextStyles: TextStyle(
+        color: Colors.white,
+        fontSize: 18.0,
+      ),
     );
   }
 }
-
-final headingTextStyle = TextStyle(
-  color: Colors.white,
-  fontSize: 30.0,
-  fontWeight: FontWeight.bold,
-  decoration: TextDecoration.none
-);
-
-class OnboardingOne extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(16.0, 64.0, 16.0, 64.0),
-      color: Colors.blue,
-      child: new Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          new Text(
-            "Welcome to the Valley Christian DECA App!",
-            textAlign: TextAlign.center,
-            style: headingTextStyle,
-          ),
-          new FlatButton(
-            onPressed: () {
-            },
-            child: new Text(
-              "Skip",
-              style: TextStyle(
-                color: Colors.white
-              ),
-            ),
-          )
-        ],
-      )
-    );
-  }
-}
-
-class OnboardingTwo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.lightBlue,
-    );
-  }
-}
-
-class OnboardingThree extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.lightBlueAccent,
-    );
-  }
-}
-
-
