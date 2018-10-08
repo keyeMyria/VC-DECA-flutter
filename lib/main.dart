@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:vc_deca/alert_view.dart';
 import 'package:vc_deca/login.dart';
 import 'package:vc_deca/network_checker.dart';
 import 'package:vc_deca/onboarding_page.dart';
@@ -36,6 +37,7 @@ Future <void> main() async {
       '/toRegister' : (BuildContext context) => new RegisterPage(),
       '/toLogin' : (BuildContext context) => new LoginPage(),
       '/registered': (BuildContext context) => new TabBarController(),
+      '/alert': (BuildContext context) => new AlertPage(),
     },
     debugShowCheckedModeBanner: false,
   ));

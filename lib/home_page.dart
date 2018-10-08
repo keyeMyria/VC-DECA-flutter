@@ -71,55 +71,62 @@ class _HomePageState extends State<HomePage> {
       child: ListView.builder(
         itemCount: alertList.length,
         itemBuilder: (BuildContext context, int index) {
-          return new Card(
-            child: new Container(
-              padding: EdgeInsets.all(16.0),
-              child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  new Container(
-                      child: new Icon(
-                        Icons.notifications_active,
-                        color: Colors.lightBlue,
-                      )
-                  ),
-                  new Padding(padding: EdgeInsets.all(5.0)),
-                  new Column(
-                    children: <Widget>[
-                      new Container(
-                        width: MediaQuery.of(context).size.width - 150,
-                        child: new Text(
-                          alertList[index].alertTitle,
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.bold,
+          return GestureDetector(
+            onTap: () {
+              selectedAlert = alertList[index].key;
+              print(selectedAlert);
+              Navigator.of(context).pushNamed('/alert');
+            },
+            child: new Card(
+              child: new Container(
+                padding: EdgeInsets.all(16.0),
+                child: new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    new Container(
+                        child: new Icon(
+                          Icons.notifications_active,
+                          color: Colors.lightBlue,
+                        )
+                    ),
+                    new Padding(padding: EdgeInsets.all(5.0)),
+                    new Column(
+                      children: <Widget>[
+                        new Container(
+                          width: MediaQuery.of(context).size.width - 150,
+                          child: new Text(
+                            alertList[index].alertTitle,
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              fontSize: 17.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      new Padding(padding: EdgeInsets.all(5.0)),
-                      new Container(
-                        width: MediaQuery.of(context).size.width - 150,
-                        child: new Text(
-                          alertList[index].alertBody,
-                          textAlign: TextAlign.start,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 15.0,
+                        new Padding(padding: EdgeInsets.all(5.0)),
+                        new Container(
+                          width: MediaQuery.of(context).size.width - 150,
+                          child: new Text(
+                            alertList[index].alertBody,
+                            textAlign: TextAlign.start,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 15.0,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  new Padding(padding: EdgeInsets.all(5.0)),
-                  new Container(
-                      child: new Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.lightBlue,
-                      )
-                  ),
-                ],
+                      ],
+                    ),
+                    new Padding(padding: EdgeInsets.all(5.0)),
+                    new Container(
+                        child: new Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.lightBlue,
+                        )
+                    ),
+                  ],
+                ),
               ),
             ),
           );

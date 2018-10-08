@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:vc_deca/home_page.dart';
@@ -32,11 +32,15 @@ class _TabBarControllerState extends State<TabBarController> {
   var newAlertBody = "";
 
   void alertTitleText(String input) {
-    newAlertTitle = input;
+    setState(() {
+      newAlertTitle = input;
+    });
   }
 
   void alertBodyText(String input) {
-    newAlertBody = input;
+    setState(() {
+      newAlertBody = input;
+    });
   }
 
   void addAlertDialog() {
@@ -79,7 +83,10 @@ class _TabBarControllerState extends State<TabBarController> {
                   databaseRef.child("alerts").push().update({
                     "title": newAlertTitle,
                     "body": newAlertBody,
+                    "date": formatDate(DateTime.now(), [dd, '/', mm, '/', yyyy, ' ', HH, ':', nn])
                   });
+                  newAlertBody = "";
+                  newAlertTitle = "";
                   Navigator.of(context).pop();
                 }
               },
@@ -87,6 +94,8 @@ class _TabBarControllerState extends State<TabBarController> {
             new FlatButton(
               child: new Text("CANCEL"),
               onPressed: () {
+                newAlertBody = "";
+                newAlertTitle = "";
                 Navigator.of(context).pop();
               },
             ),
