@@ -21,7 +21,6 @@ class _ConnectionCheckerState extends State<ConnectionChecker> {
       Navigator.of(context).pushReplacementNamed('/checkAuth');
     }
     else {
-      print("you're fucked lol");
     }
   }
 

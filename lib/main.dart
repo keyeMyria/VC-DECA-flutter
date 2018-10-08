@@ -10,20 +10,20 @@ import 'package:vc_deca/auth_checker.dart';
 import 'package:vc_deca/tab_bar_controller.dart';
 
 Future <void> main() async {
-  final FirebaseApp app = await FirebaseApp.configure(
-    name: 'vc-deca',
-    options: Platform.isIOS
-        ? const FirebaseOptions(
-      googleAppID: '1:946014932243:ios:7ff8d9cacecec349',
-      gcmSenderID: '297855924061',
-      databaseURL: 'https://vc-deca.firebaseio.com',
-    )
-        : const FirebaseOptions(
-      googleAppID: '1:946014932243:android:7ff8d9cacecec349',
-      apiKey: 'AIzaSyD_shO5mfO9lhy2TVWhfo1VUmARKlG4suk',
-      databaseURL: 'https://vc-deca.firebaseio.com',
-    ),
-  );
+//  final FirebaseApp app = await FirebaseApp.configure(
+//    name: 'vc-deca',
+//    options: Platform.isIOS
+//        ? const FirebaseOptions(
+//      googleAppID: '1:946014932243:ios:7ff8d9cacecec349',
+//      gcmSenderID: '297855924061',
+//      databaseURL: 'https://vc-deca.firebaseio.com',
+//    )
+//        : const FirebaseOptions(
+//      googleAppID: '1:946014932243:android:7ff8d9cacecec349',
+//      apiKey: 'AIzaSyD_shO5mfO9lhy2TVWhfo1VUmARKlG4suk',
+//      databaseURL: 'https://vc-deca.firebaseio.com',
+//    ),
+//  );
 
   runApp(new MaterialApp(
     title: "VC DECA",

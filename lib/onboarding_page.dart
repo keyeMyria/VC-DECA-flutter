@@ -73,7 +73,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
       body: Text(
         'Easy access from all your favorite devices',
       ),
-      title: Text('Multi-Platform'),
+      title: Text(
+        'Multi-Platform',
+        textAlign: TextAlign.center,
+      ),
       mainImage: Image.asset(
         'images/platform.png',
         height: 285.0,

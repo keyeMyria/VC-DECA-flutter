@@ -23,11 +23,11 @@ class _LoginPage extends State<LoginPage> {
 
       userID = user.uid;
 
-      databaseRef.child("users").child(userID).update({
-        "name": name,
-        "email": email,
-        "role": role,
-        "userID": userID
+      databaseRef.child("users").child(userID).once().then((DataSnapshot snapshot) {
+        var userInfo = snapshot.value;
+        email = userInfo["email"];
+        role = userInfo["role"];
+        name = userInfo["name"];
       });
 
       Navigator.of(context).pushReplacementNamed('/registered');
