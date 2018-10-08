@@ -7,6 +7,7 @@ import 'package:vc_deca/setting_page.dart';
 import 'package:vc_deca/schedule_page.dart';
 import 'package:vc_deca/chat_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:vc_deca/user_drawer.dart';
 import 'package:vc_deca/user_info.dart';
 
@@ -16,6 +17,9 @@ class TabBarController extends StatefulWidget {
 }
 
 class _TabBarControllerState extends State<TabBarController> {
+
+  final databaseRef = FirebaseDatabase.instance.reference();
+
   String title = "VC DECA";
 
   PageController pageController;
@@ -26,10 +30,6 @@ class _TabBarControllerState extends State<TabBarController> {
 
   var newAlertTitle = "";
   var newAlertBody = "";
-
-  var newAlertButton = new FloatingActionButton(
-    child: Icon(Icons.add),
-  );
 
   void alertTitleText(String input) {
     newAlertTitle = input;
@@ -47,22 +47,39 @@ class _TabBarControllerState extends State<TabBarController> {
         // return object of type Dialog
         return AlertDialog(
           title: new Text("Create New Announcement"),
-          content: new Column(
-            children: <Widget>[
-              new TextField(
-                onChanged: alertTitleText,
-                decoration: InputDecoration(
-                    labelText: "Announcement Title",
-                    hintText: "Enter announcement title"
+          content: new Container(
+            height: 150.0,
+            child: new Column(
+              children: <Widget>[
+                new TextField(
+                  onChanged: alertTitleText,
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                      labelText: "Announcement Title",
+                      hintText: "Enter announcement title"
+                  ),
                 ),
-              ),
-            ],
+                new TextField(
+                  onChanged: alertBodyText,
+                  maxLines: null,
+                  textCapitalization: TextCapitalization.sentences,
+                  decoration: InputDecoration(
+                      labelText: "Announcement Body",
+                      hintText: "Enter announcement body"
+                  ),
+                ),
+              ],
+            ),
           ),
           actions: <Widget>[
             new FlatButton(
               child: new Text("CREATE"),
               onPressed: () {
-                if (newAlertTitle != "") {
+                if (newAlertTitle != "" && newAlertBody != "") {
+                  databaseRef.child("alerts").push().update({
+                    "title": newAlertTitle,
+                    "body": newAlertBody,
+                  });
                   Navigator.of(context).pop();
                 }
               },
@@ -100,7 +117,11 @@ class _TabBarControllerState extends State<TabBarController> {
         currentTabButton = null;
       } else {
         title = "VC DECA";
-        currentTabButton = newAlertButton;
+        currentTabButton = new FloatingActionButton(
+          backgroundColor: Colors.lightBlue,
+          child: Icon(Icons.add),
+          onPressed: addAlertDialog,
+        );
       }
     });
   }
