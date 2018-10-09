@@ -107,16 +107,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new IntroViewsFlutter(
-      pages,
-      onTapDoneButton: () {
-        Navigator.of(context).pushReplacementNamed('/toRegister');
-      },
-      showSkipButton:
-      false, //Whether you want to show the skip button or not.
-      pageButtonTextStyles: TextStyle(
-        color: Colors.white,
-        fontSize: 18.0,
+    return new Container(
+      color: Colors.lightBlue,
+      child: new SafeArea(
+        child: new IntroViewsFlutter(
+          pages,
+          onTapDoneButton: () {
+            Navigator.of(context).pushReplacementNamed('/toRegister');
+          },
+          columnMainAxisAlignment: MainAxisAlignment.start,
+          showSkipButton: false, //Whether you want to show the skip button or not.
+          pageButtonTextStyles: TextStyle(
+            color: Colors.white,
+            fontSize: 18.0,
+          ),
+        ),
       ),
     );
   }

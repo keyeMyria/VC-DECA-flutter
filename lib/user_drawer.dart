@@ -21,33 +21,35 @@ class _UserDrawerState extends State<UserDrawer> {
   
   void testUpload() {
     databaseRef.reference().child("testing").push().set({
-      "Test": "test item"
+      "Test": "$userID - $name"
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(32.0),
-      child: Center(
-        child: Column(
-          children: <Widget>[
-            new Text("Hello User Drawer!"),
-            new Text(name),
-            new Text(email),
-            new Text("Role: $role"),
-            new RaisedButton(
-              child: new Text("Sign Out"),
-              onPressed: () {
-                FirebaseAuth.instance.signOut();
-                Navigator.of(context).pushReplacementNamed('/notLogged');
-              },
-            ),
-            new RaisedButton(
-              child: new Text("Test Firebase Upload\n$name!"),
-              onPressed: testUpload,
-            )
-          ],
+    return new SafeArea(
+      child: Container(
+        padding: EdgeInsets.all(32.0),
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              new Text("Hello User Drawer!"),
+              new Text(name),
+              new Text(email),
+              new Text("Role: $role"),
+              new RaisedButton(
+                child: new Text("Sign Out"),
+                onPressed: () {
+                  FirebaseAuth.instance.signOut();
+                  Navigator.of(context).pushReplacementNamed('/notLogged');
+                },
+              ),
+              new RaisedButton(
+                child: new Text("Test Firebase Upload\n$name!"),
+                onPressed: testUpload,
+              )
+            ],
+          ),
         ),
       ),
     );

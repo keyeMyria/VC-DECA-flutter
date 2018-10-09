@@ -118,12 +118,21 @@ class _TabBarControllerState extends State<TabBarController> {
       if (currentTab == 1) {
         title = "Schedule";
         currentTabButton = null;
+        if (role == "admin") {
+          currentButton = currentTabButton;
+        }
       } else if (currentTab == 2) {
         title = "Chat";
         currentTabButton = null;
+        if (role == "admin") {
+          currentButton = currentTabButton;
+        }
       } else if (currentTab == 3) {
         title = "Settings";
         currentTabButton = null;
+        if (role == "admin") {
+          currentButton = currentTabButton;
+        }
       } else {
         title = "VC DECA";
         currentTabButton = new FloatingActionButton(
@@ -131,6 +140,9 @@ class _TabBarControllerState extends State<TabBarController> {
           child: Icon(Icons.add),
           onPressed: addAlertDialog,
         );
+        if (role == "admin") {
+          currentButton = currentTabButton;
+        }
       }
     });
   }
@@ -139,12 +151,6 @@ class _TabBarControllerState extends State<TabBarController> {
   void initState() {
     super.initState();
     pageController = new PageController();
-    if (role == "admin") {
-      currentButton = currentTabButton;
-    }
-    else {
-      currentButton = null;
-    }
   }
 
   @override
@@ -160,7 +166,7 @@ class _TabBarControllerState extends State<TabBarController> {
             )
           ),
         ),
-        floatingActionButton: currentTabButton,
+        floatingActionButton: currentButton,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: currentTab,
