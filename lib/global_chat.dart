@@ -35,10 +35,10 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
   final myController = TextEditingController();
   ScrollController _scrollController = new ScrollController();
   List<ChatMessage> messageList = new List();
+  var listSize;
 
   _GlobalChatPageState() {
     databaseRef.child("chat").child("global").onChildAdded.listen(onNewMessage);
-
   }
 
   onNewMessage(Event event) async {
@@ -62,6 +62,9 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
   }
 
   void onMessageType(String input) {
+    setState(() {
+      listSize = MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 1.5);
+    });
     _scrollController.animateTo(
       _scrollController.position.maxScrollExtent,
       duration: const Duration(milliseconds: 300),
@@ -76,9 +79,12 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
         "message": input,
       });
     }
+    setState(() {
+      listSize = MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 4);
+    });
     myController.clear();
     _scrollController.animateTo(
-      _scrollController.position.maxScrollExtent,
+      _scrollController.position.maxScrollExtent + 10,
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeOut,
     );
@@ -105,6 +111,7 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
   @override
   void initState() {
     super.initState();
+    listSize = 500.0;
   }
 
   @override
@@ -123,6 +130,7 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
       backgroundColor: Colors.white,
       floatingActionButton: new Container(
         color: Colors.white,
+        height: 100.0,
         padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 32.0),
         child: new TextField(
           controller: myController,
@@ -138,39 +146,35 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: new SafeArea(
-        child: new Column(
-          children: <Widget>[
-            new Container(
-              color: Colors.white,
-              height: MediaQuery.of(context).size.height - 200,
-              padding: EdgeInsets.all(16.0),
-              child: new ListView.builder(
-                itemCount: messageList.length,
-                controller: _scrollController,
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    child: ListTile(
-                      title: new Text(
-                        messageList[index].message,
-                        textAlign: getAlignment(messageList[index].author),
-                        style: TextStyle(
-                            color: getColor(messageList[index].author)
-                        ),
-                      ),
-                      subtitle: new Text(
-                        messageList[index].author,
-                        textAlign: getAlignment(messageList[index].author),
-                        style: TextStyle(
-//                    color: getColor(messageList[index].author)
-                        ),
-                      ),
+        child: new Container(
+          color: Colors.white,
+          height: listSize,
+          padding: EdgeInsets.all(16.0),
+          child: new ListView.builder(
+            itemCount: messageList.length,
+            controller: _scrollController,
+            itemBuilder: (BuildContext context, int index) {
+              return GestureDetector(
+                child: ListTile(
+                  title: new Text(
+                    messageList[index].message,
+                    textAlign: getAlignment(messageList[index].author),
+                    style: TextStyle(
+                        color: getColor(messageList[index].author)
                     ),
-                  );
-                },
-              ),
-            ),
-          ],
-        )
+                  ),
+                  subtitle: new Text(
+                    messageList[index].author,
+                    textAlign: getAlignment(messageList[index].author),
+                    style: TextStyle(
+//                    color: getColor(messageList[index].author)
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
