@@ -28,6 +28,7 @@ class _AuthCheckerState extends State<AuthChecker> {
         email = userInfo["email"];
         role = userInfo["role"];
         name = userInfo["name"];
+        chapGroupID = userInfo["group"];
       });
 
       Navigator.of(context).pushReplacementNamed('/logged');

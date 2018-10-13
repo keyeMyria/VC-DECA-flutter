@@ -31,6 +31,9 @@ class _TabBarControllerState extends State<TabBarController> {
   var newAlertTitle = "";
   var newAlertBody = "";
 
+  var newGroupCode = "";
+  var newChaperoneName = "";
+
   void alertTitleText(String input) {
     setState(() {
       newAlertTitle = input;
@@ -44,6 +47,8 @@ class _TabBarControllerState extends State<TabBarController> {
   }
 
   void addAlertDialog() {
+    newAlertBody = "";
+    newAlertTitle = "";
     // flutter defined function
     showDialog(
       context: context,
@@ -105,6 +110,69 @@ class _TabBarControllerState extends State<TabBarController> {
     );
   }
 
+  void createGroupDialog() {
+    newGroupCode = "";
+    newChaperoneName = "";
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("Create Chaperone Group"),
+          content: new Container(
+            height: 150.0,
+            child: new Column(
+              children: <Widget>[
+                new TextField(
+                  onChanged: (String input) {
+                    newChaperoneName = input;
+                  },
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                      labelText: "Chaperone Name",
+                      hintText: "Enter chaperone's name"
+                  ),
+                ),
+                new Padding(padding: EdgeInsets.all(5.0)),
+                new TextField(
+                  onChanged: (String input) {
+                    newGroupCode = input;
+                  },
+                  textCapitalization: TextCapitalization.characters,
+                  decoration: InputDecoration(
+                      labelText: "Group Code",
+                      hintText: "Enter chaperone group code"
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            new FlatButton(
+              child: new Text("CREATE"),
+              onPressed: () {
+                if (newGroupCode != "" && newChaperoneName != "") {
+                  databaseRef.child("chat").child(newGroupCode).push().update({
+                    "author": "GroupCreatorBot",
+                    "message": "Welcome to $newChaperoneName's chaperone group!"
+                  });
+                  Navigator.of(context).pop();
+                }
+              },
+            ),
+            new FlatButton(
+              child: new Text("CANCEL"),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   void tabTapped(int index) {
     setState(() {
       pageController.animateToPage(index,
@@ -124,6 +192,11 @@ class _TabBarControllerState extends State<TabBarController> {
       } else if (currentTab == 2) {
         title = "Chat";
         currentTabButton = null;
+        currentTabButton = new FloatingActionButton(
+          backgroundColor: Colors.lightBlue,
+          child: Icon(Icons.group_add),
+          onPressed: createGroupDialog,
+        );
         if (role == "admin") {
           currentButton = currentTabButton;
         }

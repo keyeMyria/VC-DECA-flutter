@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:vc_deca/alert_view.dart';
+import 'package:vc_deca/chaperone_chat.dart';
 import 'package:vc_deca/global_chat.dart';
 import 'package:vc_deca/login.dart';
 import 'package:vc_deca/network_checker.dart';
+import 'package:vc_deca/officer_chat.dart';
 import 'package:vc_deca/onboarding_page.dart';
 import 'package:vc_deca/register_page.dart';
 import 'package:vc_deca/auth_checker.dart';
@@ -40,6 +42,8 @@ Future <void> main() async {
       '/registered': (BuildContext context) => new TabBarController(),
       '/alert': (BuildContext context) => new AlertPage(),
       '/globalChat': (BuildContext context) => new GlobalChatPage(),
+      '/officerChat': (BuildContext context) => new OfficerChatPage(),
+      '/chapChat': (BuildContext context) => new ChaperoneChatPage(),
     },
     debugShowCheckedModeBanner: false,
   ));

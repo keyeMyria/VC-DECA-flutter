@@ -4,9 +4,9 @@ import 'package:flutter/scheduler.dart';
 import 'package:vc_deca/user_info.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-class GlobalChatPage extends StatefulWidget {
+class OfficerChatPage extends StatefulWidget {
   @override
-  _GlobalChatPageState createState() => _GlobalChatPageState();
+  _OfficerChatPageState createState() => _OfficerChatPageState();
 }
 
 class ChatMessage {
@@ -29,7 +29,7 @@ class ChatMessage {
   }
 }
 
-class _GlobalChatPageState extends State<GlobalChatPage> {
+class _OfficerChatPageState extends State<OfficerChatPage> {
 
   final databaseRef = FirebaseDatabase.instance.reference();
   final myController = TextEditingController();
@@ -37,8 +37,8 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
   List<ChatMessage> messageList = new List();
   var listSize;
 
-  _GlobalChatPageState() {
-    databaseRef.child("chat").child("global").onChildAdded.listen(onNewMessage);
+  _OfficerChatPageState() {
+    databaseRef.child("chat").child("officer").onChildAdded.listen(onNewMessage);
   }
 
   onNewMessage(Event event) async {
@@ -74,7 +74,7 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
 
   void sendMessage(String input) {
     if (input != "" && input != " ") {
-      databaseRef.child("chat").child("global").push().update({
+      databaseRef.child("chat").child("officer").push().update({
         "author": name,
         "message": input,
       });
@@ -119,7 +119,7 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
-        title: new Text("General"),
+        title: new Text("Officers"),
         textTheme: TextTheme(
             title: TextStyle(
                 fontSize: 25.0,

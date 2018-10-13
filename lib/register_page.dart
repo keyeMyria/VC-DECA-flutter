@@ -42,7 +42,8 @@ class _RegisterPageState extends State<RegisterPage> {
           "name": name,
           "email": email,
           "role": role,
-          "userID": userID
+          "userID": userID,
+          "group": chapGroupID
         });
 
         Navigator.of(context).pushReplacementNamed('/registered');

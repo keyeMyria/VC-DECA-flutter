@@ -28,6 +28,7 @@ class _LoginPage extends State<LoginPage> {
         email = userInfo["email"];
         role = userInfo["role"];
         name = userInfo["name"];
+        chapGroupID = userInfo["group"];
       });
 
       Navigator.of(context).pushReplacementNamed('/registered');
