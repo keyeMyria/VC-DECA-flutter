@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:vc_deca/alert_view.dart';
 import 'package:vc_deca/chaperone_chat.dart';
+import 'package:vc_deca/event_category.dart';
 import 'package:vc_deca/event_view.dart';
 import 'package:vc_deca/global_chat.dart';
 import 'package:vc_deca/login.dart';
@@ -46,6 +47,7 @@ Future <void> main() async {
       '/officerChat': (BuildContext context) => new OfficerChatPage(),
       '/chapChat': (BuildContext context) => new ChaperoneChatPage(),
       '/event': (BuildContext context) => new EventPage(),
+      '/eventCategory': (BuildContext context) => new EventCategoryPage(),
     },
     debugShowCheckedModeBanner: false,
   ));

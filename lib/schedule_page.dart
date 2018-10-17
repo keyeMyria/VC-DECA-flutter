@@ -25,13 +25,39 @@ class _SchedulePageState extends State<SchedulePage> {
   List<EventEntry> eventList = new List();
 
   _SchedulePageState() {
-    databaseRef.child("events").child(selectedYear).onChildAdded.listen(onEventAdded);
+    databaseRef.child("events").onChildAdded.listen(onEventAdded);
   }
 
   onEventAdded(Event event) {
     setState(() {
       eventList.add(new EventEntry.fromSnapshot(event.snapshot));
     });
+  }
+  
+  Widget getLeadingPic(String name) {
+    String imagePath = "";
+    if (name == "Business Management") {
+        imagePath = 'images/business.png';
+    }
+    else if (name == "Entrepreneurship") {
+      imagePath = 'images/entrepreneurship.png';
+    }
+    else if (name == "Finance") {
+      imagePath = 'images/finance.png';
+    }
+    else if (name == "Hospitality + Tourism") {
+      imagePath = 'images/hospitality.png';
+    }
+    else if (name == "Marketing") {
+      imagePath = 'images/marketing.png';
+    }
+    else if (name == "Personal Financial Literacy") {
+      imagePath = 'images/personal-finance.png';
+    }
+    return Image.asset(
+      imagePath,
+      height: 35.0,
+    );
   }
 
   @override
@@ -41,63 +67,26 @@ class _SchedulePageState extends State<SchedulePage> {
       child: new ListView.builder(
         itemCount: eventList.length,
         itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(
-            onTap: () {
-              selectedEventCategory = eventList[index].key;
-              print(selectedEventCategory);
-              Navigator.of(context).pushNamed('/event');
-            },
-            child: new Card(
-              child: new Container(
-                padding: EdgeInsets.all(16.0),
-                child: new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  new Container(
-                      child: new Icon(
-                        Icons.event_note,
-                        color: Colors.lightBlue,
-                      )
+          return new Container(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                new ListTile(
+                  onTap: () {
+                    selectedCategory = eventList[index].key;
+                    Navigator.of(context).pushNamed('/eventCategory');
+                  },
+                  leading: getLeadingPic(eventList[index].key),
+                  title: new Text(
+                    eventList[index].key
                   ),
-                  new Padding(padding: EdgeInsets.all(5.0)),
-                  new Column(
-                    children: <Widget>[
-                      new Container(
-                        width: MediaQuery.of(context).size.width - 150,
-                        child: new Text(
-                          eventList[index].key,
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      new Padding(padding: EdgeInsets.all(5.0)),
-                      new Container(
-                        width: MediaQuery.of(context).size.width - 150,
-                        child: new Text(
-                          eventList[index].eventBody,
-                          textAlign: TextAlign.start,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontSize: 15.0,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  new Padding(padding: EdgeInsets.all(5.0)),
-                  new Container(
-                      child: new Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.lightBlue,
-                      )
-                  ),
-                ],
-              ),
-              ),
+                  trailing: Icon(Icons.arrow_forward_ios, color: Colors.lightBlue,),
+                ),
+                new Divider(
+                  height: 8.0,
+                  color: Colors.lightBlue,
+                ),
+              ],
             ),
           );
         },

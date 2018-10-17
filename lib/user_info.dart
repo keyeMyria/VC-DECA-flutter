@@ -8,4 +8,5 @@ String role = "";
 
 String selectedAlert = "";
 String selectedYear = "2019";
-String selectedEventCategory = "";
+String selectedCategory = "";
+String selectedEvent = "";
