@@ -12,9 +12,16 @@ class _SettingsPageState extends State<SettingsPage> {
       decoration: BoxDecoration(
           color: Colors.white,
       ),
-      child: Center(
-          child: new Text("Settings Page")
-      ),
+      child: new Container(
+        padding: EdgeInsets.all(16.0),
+        child: new Column(
+          children: <Widget>[
+            new ListTile(
+              title: Text("About"),
+            )
+          ],
+        ),
+      )
     );
   }
 }

@@ -52,41 +52,45 @@ class _EventCategoryPageState extends State<EventCategoryPage> {
       body: Container(
         color: Colors.white,
         padding: EdgeInsets.all(16.0),
-        child: new ListView.builder(
-          itemCount: eventList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return GestureDetector(
-              onTap: () {
-                selectedEvent = eventList[index].key;
-                print(selectedEvent);
-                Navigator.of(context).pushNamed('/event');
-              },
-              child: new Card(
-                child: new Container(
-                  padding: EdgeInsets.all(16.0),
-                  child: new Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      new Container(
-                          child: new Text(
-                            eventList[index].eventShort,
-                            style: TextStyle(color: Colors.lightBlue, fontSize: 17.0, fontWeight: FontWeight.bold),
-                          )
-                      ),
-                      new Padding(padding: EdgeInsets.all(5.0)),
-                      new Column(
-                        children: <Widget>[
-                          new Container(
-                            width: MediaQuery.of(context).size.width - 175,
-                            child: new Text(
-                              eventList[index].key,
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                fontSize: 17.0,
-                                fontWeight: FontWeight.normal,
-                              ),
+        child: new Column(
+          children: <Widget>[
+            new Text("Select an event below."),
+            new Expanded(
+              child: new ListView.builder(
+                itemCount: eventList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return GestureDetector(
+                    onTap: () {
+                      selectedEvent = eventList[index].key;
+                      print(selectedEvent);
+                      Navigator.of(context).pushNamed('/event');
+                    },
+                    child: new Card(
+                      child: new Container(
+                        padding: EdgeInsets.all(16.0),
+                        child: new Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            new Container(
+                                child: new Text(
+                                  eventList[index].eventShort,
+                                  style: TextStyle(color: Colors.lightBlue, fontSize: 17.0, fontWeight: FontWeight.bold),
+                                )
                             ),
-                          ),
+                            new Padding(padding: EdgeInsets.all(5.0)),
+                            new Column(
+                              children: <Widget>[
+                                new Container(
+                                  width: MediaQuery.of(context).size.width - 175,
+                                  child: new Text(
+                                    eventList[index].key,
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                      fontSize: 17.0,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  ),
+                                ),
 //                          new Padding(padding: EdgeInsets.all(5.0)),
 //                          new Container(
 //                            width: MediaQuery.of(context).size.width - 150,
@@ -100,22 +104,25 @@ class _EventCategoryPageState extends State<EventCategoryPage> {
 //                              ),
 //                            ),
 //                          ),
-                        ],
+                              ],
+                            ),
+                            new Padding(padding: EdgeInsets.all(5.0)),
+                            new Container(
+                                child: new Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.lightBlue,
+                                )
+                            ),
+                          ],
+                        ),
                       ),
-                      new Padding(padding: EdgeInsets.all(5.0)),
-                      new Container(
-                          child: new Icon(
-                            Icons.arrow_forward_ios,
-                            color: Colors.lightBlue,
-                          )
-                      ),
-                    ],
-                  ),
-                ),
+                    ),
+                  );
+                },
               ),
-            );
-          },
-        ),
+            )
+          ],
+        )
       ),
     );
   }

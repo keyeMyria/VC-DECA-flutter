@@ -1,3 +1,4 @@
+double appVersion = 1.0;
 
 String name = "";
 String email = "";

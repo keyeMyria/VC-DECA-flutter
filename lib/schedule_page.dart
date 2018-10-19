@@ -64,33 +64,42 @@ class _SchedulePageState extends State<SchedulePage> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(16.0),
-      child: new ListView.builder(
-        itemCount: eventList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return new Container(
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                new ListTile(
-                  onTap: () {
-                    selectedCategory = eventList[index].key;
-                    Navigator.of(context).pushNamed('/eventCategory');
-                  },
-                  leading: getLeadingPic(eventList[index].key),
-                  title: new Text(
-                    eventList[index].key
+      child: new Column(
+        children: <Widget>[
+          new Text(
+            "Select a category below."
+          ),
+          new Expanded(
+            child: new ListView.builder(
+              itemCount: eventList.length,
+              itemBuilder: (BuildContext context, int index) {
+                return new Container(
+                  child: new Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      new ListTile(
+                        onTap: () {
+                          selectedCategory = eventList[index].key;
+                          Navigator.of(context).pushNamed('/eventCategory');
+                        },
+                        leading: getLeadingPic(eventList[index].key),
+                        title: new Text(
+                            eventList[index].key
+                        ),
+                        trailing: Icon(Icons.arrow_forward_ios, color: Colors.lightBlue,),
+                      ),
+                      new Divider(
+                        height: 8.0,
+                        color: Colors.lightBlue,
+                      ),
+                    ],
                   ),
-                  trailing: Icon(Icons.arrow_forward_ios, color: Colors.lightBlue,),
-                ),
-                new Divider(
-                  height: 8.0,
-                  color: Colors.lightBlue,
-                ),
-              ],
+                );
+              },
             ),
-          );
-        },
-      ),
+          )
+        ],
+      )
     );
   }
 }
