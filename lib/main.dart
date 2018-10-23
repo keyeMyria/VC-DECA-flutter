@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:vc_deca/network_check_again.dart';
+import 'package:vc_deca/user_info.dart';
 import 'package:flutter/material.dart';
 import 'package:vc_deca/alert_view.dart';
 import 'package:vc_deca/chaperone_chat.dart';
@@ -14,13 +16,14 @@ import 'package:vc_deca/onboarding_page.dart';
 import 'package:vc_deca/register_page.dart';
 import 'package:vc_deca/auth_checker.dart';
 import 'package:vc_deca/tab_bar_controller.dart';
+import 'package:fluro/fluro.dart';
 
-Future <void> main() async {
+void main() {
 //  final FirebaseApp app = await FirebaseApp.configure(
 //    name: 'vc-deca',
 //    options: Platform.isIOS
 //        ? const FirebaseOptions(
-//      googleAppID: '1:946014932243:ios:7ff8d9cacecec349',
+//      googleAppID: '1:946014932243:ios:7ff8d9cacecec349',®
 //      gcmSenderID: '297855924061',
 //      databaseURL: 'https://vc-deca.firebaseio.com',
 //    )
@@ -31,24 +34,66 @@ Future <void> main() async {
 //    ),
 //  );
 
+  router.define('/checkConnection', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new ConnectionChecker();
+  }));
+
+  router.define('/checkConnectionAgain', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new ConnectionCheckerAgain();
+  }));
+
+  router.define('/alert', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new AlertPage();
+  }));
+
+  router.define('/checkAuth', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new AuthChecker();
+  }));
+
+  router.define('/logged', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new TabBarController();
+  }));
+
+  router.define('/notLogged', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new OnboardingPage();
+  }));
+
+  router.define('/toRegister', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new RegisterPage();
+  }));
+
+  router.define('/toLogin', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new LoginPage();
+  }));
+
+  router.define('/registered', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new TabBarController();
+  }));
+
+  router.define('/globalChat', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new GlobalChatPage();
+  }));
+
+  router.define('/officerChat', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new OfficerChatPage();
+  }));
+
+  router.define('/chapChat', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new ChaperoneChatPage();
+  }));
+
+  router.define('/event', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new EventPage();
+  }));
+
+  router.define('/eventCategory', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new EventCategoryPage();
+  }));
+
   runApp(new MaterialApp(
     title: "VC DECA",
     home: ConnectionChecker(),
-    routes: <String, WidgetBuilder> {
-      '/checkConnection': (BuildContext context) => new ConnectionChecker(),
-      '/checkAuth': (BuildContext context) => new AuthChecker(),
-      '/logged': (BuildContext context) => new TabBarController(),
-      '/notLogged' : (BuildContext context) => new OnboardingPage(),
-      '/toRegister' : (BuildContext context) => new RegisterPage(),
-      '/toLogin' : (BuildContext context) => new LoginPage(),
-      '/registered': (BuildContext context) => new TabBarController(),
-      '/alert': (BuildContext context) => new AlertPage(),
-      '/globalChat': (BuildContext context) => new GlobalChatPage(),
-      '/officerChat': (BuildContext context) => new OfficerChatPage(),
-      '/chapChat': (BuildContext context) => new ChaperoneChatPage(),
-      '/event': (BuildContext context) => new EventPage(),
-      '/eventCategory': (BuildContext context) => new EventCategoryPage(),
-    },
+    onGenerateRoute: router.generator,
     debugShowCheckedModeBanner: false,
   ));
 }

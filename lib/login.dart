@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:vc_deca/user_info.dart';
@@ -17,8 +18,7 @@ class _LoginPage extends State<LoginPage> {
 
   void login() async {
     try {
-      FirebaseUser user = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(email: _email, password: _password);
+      FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
       print("Signed in! ${user.uid}");
 
       userID = user.uid;
@@ -31,7 +31,7 @@ class _LoginPage extends State<LoginPage> {
         chapGroupID = userInfo["group"];
       });
 
-      Navigator.of(context).pushReplacementNamed('/registered');
+      router.navigateTo(context,'/registered', transition: TransitionType.fadeIn, clearStack: true);
     }
     catch (error) {
       print("Error: $error");
@@ -106,7 +106,7 @@ class _LoginPage extends State<LoginPage> {
                 ),
                 splashColor: Colors.lightBlueAccent,
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/toRegister');
+                  router.pop(context);
                 },
               )
             ],

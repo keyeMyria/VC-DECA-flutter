@@ -4,12 +4,12 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:vc_deca/user_info.dart';
 import 'package:fluro/fluro.dart';
 
-class ConnectionChecker extends StatefulWidget {
+class ConnectionCheckerAgain extends StatefulWidget {
   @override
-  _ConnectionCheckerState createState() => _ConnectionCheckerState();
+  _ConnectionCheckerAgainState createState() => _ConnectionCheckerAgainState();
 }
 
-class _ConnectionCheckerState extends State<ConnectionChecker> {
+class _ConnectionCheckerAgainState extends State<ConnectionCheckerAgain> {
 
   final connectionRef = FirebaseDatabase.instance.reference().child(".info/connected");
 
@@ -25,7 +25,7 @@ class _ConnectionCheckerState extends State<ConnectionChecker> {
     }
     else {
       print("Not Connected");
-      router.navigateTo(context, '/checkConnectionAgain', transition: TransitionType.fadeIn, replace: true);
+      router.navigateTo(context, '/checkConnection', transition: TransitionType.fadeIn, replace: true);
     }
   }
 
@@ -34,7 +34,7 @@ class _ConnectionCheckerState extends State<ConnectionChecker> {
     super.initState();
     checkConnection();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(

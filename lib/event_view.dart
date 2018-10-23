@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vc_deca/user_info.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class EventPage extends StatefulWidget {
@@ -10,14 +11,16 @@ class EventPage extends StatefulWidget {
 class EventListing {
   String key;
   String eventTime;
+  String eventSchool;
   String eventPerson;
 
-  EventListing(this.eventTime, this.eventPerson);
+  EventListing(this.eventTime, this.eventPerson, this.eventSchool);
 
   EventListing.fromSnapshot(DataSnapshot snapshot)
       : key = snapshot.key,
         eventTime = snapshot.value["time"].toString(),
-        eventPerson = snapshot.value["name"].toString();
+        eventPerson = snapshot.value["name"].toString(),
+        eventSchool = snapshot.value["school"].toString();
 }
 
 class _EventPageState extends State<EventPage> {
@@ -30,6 +33,8 @@ class _EventPageState extends State<EventPage> {
   String categoryBody = "";
   String eventLocation = "";
 
+  String backdrop = "Nothing to see here!\nCheck back later for event time listings.";
+
   _EventPageState() {
     databaseRef.child("events").child(selectedCategory).child(selectedEvent).once().then((DataSnapshot snapshot) {
       print(snapshot.value);
@@ -38,16 +43,106 @@ class _EventPageState extends State<EventPage> {
       setState(() {
         categoryShort = categoryInfo["short"];
         categoryBody = categoryInfo["body"];
-        eventLocation = categoryInfo["location"];
+      });
+      databaseRef.child("events").child(selectedCategory).child(selectedEvent).child(selectedYear).once().then((DataSnapshot snapshot) {
+        print(snapshot.value);
+        if (selectedYear == "Please select a conference") {
+          setState(() {
+            eventLocation = "";
+            backdrop = "Nothing to see here!\nCheck back later for event time listings.";
+          });
+        }
+        else if (snapshot.value != null) {
+          setState(() {
+            eventLocation = snapshot.value["location"];
+            backdrop = "";
+          });
+        }
+        else {
+          setState(() {
+            eventLocation = "ERROR RETRIEVING EVENT DATA";
+            backdrop = "Nothing to see here!\nCheck back later for event time listings.";
+          });
+        }
       });
     });
-    databaseRef.child("events").child(selectedCategory).child(selectedEvent).child("events").onChildAdded.listen(onEventAdded);
+    databaseRef.child("events").child(selectedCategory).child(selectedEvent).child(selectedYear).child("events").onChildAdded.listen(onEventAdded);
   }
 
   onEventAdded(Event event) {
     setState(() {
       eventList.add(new EventListing.fromSnapshot(event.snapshot));
     });
+  }
+
+  Icon addCheckmark(String title) {
+    if (title == selectedYear) {
+      return Icon(Icons.check, color: Colors.lightBlue);
+    }
+    else {
+      return null;
+    }
+  }
+
+  Widget addEventSelection(String title) {
+    return new ListTile(
+      trailing: addCheckmark(title),
+      title: new Text(title),
+      onTap: () {
+        setState(() {
+          eventList.clear();
+          selectedYear = title;
+          databaseRef.child("events").child(selectedCategory).child(selectedEvent).child(selectedYear).once().then((DataSnapshot snapshot) {
+            print(snapshot.value);
+            if (selectedYear == "none") {
+              setState(() {
+                eventLocation = "Please select a conference first";
+                backdrop = "Nothing to see here!\nCheck back later for event time listings.";
+              });
+            }
+            else if (snapshot.value != null) {
+              setState(() {
+                eventLocation = snapshot.value["location"];
+                backdrop = "";
+              });
+            }
+            else {
+              setState(() {
+                eventLocation = "ERROR RETRIEVING EVENT DATA";
+                backdrop = "Nothing to see here!\nCheck back later for event time listings.";
+              });
+            }
+          });
+          databaseRef.child("events").child(selectedCategory).child(selectedEvent).child(selectedYear).child("events").onChildAdded.listen(onEventAdded);
+        });
+        Navigator.pop(context);
+      },
+    );
+  }
+
+  void selectYearDialog() {
+    // flutter defined function
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("Select a Conference"),
+          content: new Container(
+            height: 150.0,
+            child: new SingleChildScrollView(
+              child: new Column(
+                children: <Widget>[
+                  addEventSelection("2019 SVDC"),
+                  new Divider(color: Colors.lightBlue, height: 0.0),
+                  addEventSelection("2019 SCDC"),
+                ],
+              )
+            ),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -62,6 +157,15 @@ class _EventPageState extends State<EventPage> {
                 fontWeight: FontWeight.bold
             )
         ),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Image.asset('images/filter.png', color: Colors.white, height: 25.0,),
+            color: Colors.white,
+            onPressed: () {
+              selectYearDialog();
+            },
+          ),
+        ],
       ),
       body: new Container(
           padding: EdgeInsets.all(16.0),
@@ -81,7 +185,7 @@ class _EventPageState extends State<EventPage> {
               ),
               new Padding(padding: EdgeInsets.all(8.0)),
               new Text(
-                eventLocation,
+                ("$eventLocation - $selectedYear"),
                 style: TextStyle(
                   color: Colors.lightBlue,
                   fontWeight: FontWeight.normal,
@@ -116,7 +220,7 @@ class _EventPageState extends State<EventPage> {
                       height: 50.0,
                       child: new Center(
                         child: new Text(
-                          "Nothing to see here!\nCheck back later for event time listings.",
+                          backdrop,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.lightBlue,

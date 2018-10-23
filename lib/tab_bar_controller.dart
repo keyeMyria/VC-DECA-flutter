@@ -186,7 +186,7 @@ class _TabBarControllerState extends State<TabBarController> {
       if (currentTab == 1) {
         title = "Schedule";
         currentTabButton = null;
-        if (role == "admin") {
+        if (role == "Admin") {
           currentButton = currentTabButton;
         }
       } else if (currentTab == 2) {
@@ -197,13 +197,13 @@ class _TabBarControllerState extends State<TabBarController> {
           child: Icon(Icons.group_add),
           onPressed: createGroupDialog,
         );
-        if (role == "admin") {
+        if (role == "Admin") {
           currentButton = currentTabButton;
         }
       } else if (currentTab == 3) {
         title = "Settings";
         currentTabButton = null;
-        if (role == "admin") {
+        if (role == "Admin") {
           currentButton = currentTabButton;
         }
       } else {
@@ -213,7 +213,7 @@ class _TabBarControllerState extends State<TabBarController> {
           child: Icon(Icons.add),
           onPressed: addAlertDialog,
         );
-        if (role == "admin") {
+        if (role != "Member") {
           currentButton = currentTabButton;
         }
       }

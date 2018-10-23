@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vc_deca/user_info.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:fluro/fluro.dart';
 
 class SchedulePage extends StatefulWidget {
   @override
@@ -80,7 +81,7 @@ class _SchedulePageState extends State<SchedulePage> {
                       new ListTile(
                         onTap: () {
                           selectedCategory = eventList[index].key;
-                          Navigator.of(context).pushNamed('/eventCategory');
+                          router.navigateTo(context, '/eventCategory', transition: TransitionType.native);
                         },
                         leading: getLeadingPic(eventList[index].key),
                         title: new Text(

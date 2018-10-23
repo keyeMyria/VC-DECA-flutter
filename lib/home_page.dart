@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:vc_deca/user_info.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:fluro/fluro.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage> {
             onTap: () {
               selectedAlert = alertList[index].key;
               print(selectedAlert);
-              Navigator.of(context).pushNamed('/alert');
+              router.navigateTo(context, '/alert', transition: TransitionType.native);
             },
             child: new Card(
               child: new Container(

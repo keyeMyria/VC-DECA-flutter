@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vc_deca/user_info.dart';
+import 'package:fluro/fluro.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class ChatPage extends StatefulWidget {
@@ -17,13 +18,13 @@ class _ChatPageState extends State<ChatPage> {
   String joinGroup = "";
 
   void toOfficerChat() {
-    Navigator.of(context).pushNamed('/officerChat');
+    router.navigateTo(context, '/officerChat', transition: TransitionType.native);
   }
 
   void toChaperoneChat() {
     if (chapGroupID != "none") {
       print("Already in a group!");
-      Navigator.of(context).pushNamed('/chapChat');
+      router.navigateTo(context, '/chapChat', transition: TransitionType.native);
     }
     else {
       print("Need to join a group!");
@@ -100,7 +101,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   void initState() {
     super.initState();
-    if (role != "user") {
+    if (role != "Member") {
       visibleChat = new ListTile(
         title: Text("Officer Chat"),
         onTap: toOfficerChat,
@@ -124,7 +125,7 @@ class _ChatPageState extends State<ChatPage> {
             title: Text("General Chat"),
             onTap: () {
               print("Entering Global Chat");
-              Navigator.of(context).pushNamed('/globalChat');
+              router.navigateTo(context, '/globalChat', transition: TransitionType.native);
             },
             trailing: new Icon(
               Icons.arrow_forward_ios,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:vc_deca/main.dart';
+import 'package:fluro/fluro.dart';
 import 'package:vc_deca/user_info.dart';
 
 class UserDrawer extends StatefulWidget {
@@ -22,6 +23,39 @@ class _UserDrawerState extends State<UserDrawer> {
     databaseRef.reference().child("testing").push().set({
       "Test": "$userID - $name"
     });
+  }
+
+  void signOutBottomSheetMenu() {
+    showModalBottomSheet(
+        context: context,
+        builder: (builder){
+          return new Container(
+            child: new Container(
+              height: 170.0,
+              padding: EdgeInsets.all(8.0),
+                child: new Column(
+                  children: <Widget>[
+                    new Text("Are you sure you want to sign out?", style: TextStyle(fontSize: 17.0),),
+                    new Padding(padding: EdgeInsets.all(5.0)),
+                    new FlatButton(
+                      child: new Text("Sign Out", style: TextStyle(fontSize: 17.0),),
+                      textColor: Colors.red,
+                      onPressed: () {
+                        FirebaseAuth.instance.signOut();
+                        Navigator.of(context).pushReplacementNamed('/notLogged');
+                      },
+                    ),
+                    new FlatButton(
+                      child: new Text("Cancel", style: TextStyle(fontSize: 17.0),),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    )
+                  ],
+                )),
+          );
+        }
+    );
   }
 
   @override
@@ -55,25 +89,42 @@ class _UserDrawerState extends State<UserDrawer> {
                 ],
               )
           ),
-          new Padding(padding: EdgeInsets.all(8.0)),
-          new Text(email),
-          new Padding(padding: EdgeInsets.all(5.0)),
-          new Text("Role: $role"),
-          new Padding(padding: EdgeInsets.all(32.0)),
-          new RaisedButton(
-            color: Colors.red,
-            textColor: Colors.white,
-            child: new Text("Sign Out"),
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-              Navigator.of(context).pushReplacementNamed('/notLogged');
-            },
-          ),
-          new RaisedButton(
-            textColor: Colors.white,
-            color: Colors.lightBlue,
-            child: new Text("Test Firebase Upload!"),
-            onPressed: testUpload,
+          new Container(
+            padding: EdgeInsets.all(8.0),
+            child: new Column(
+              children: <Widget>[
+                new ListTile(
+                  title: new Text(email),
+                  leading: Icon(Icons.email),
+                ),
+                new ListTile(
+                  title: new Text(role),
+                  leading: Icon(Icons.verified_user),
+                ),
+
+                new ListTile(
+                  title: new Text("Help"),
+                  leading: Icon(Icons.help),
+                ),
+                new ListTile(
+                  title: new Text("Report a Bug"),
+                  leading: Icon(Icons.bug_report),
+                ),
+                new ListTile(
+                  title: new Text("Test Firebase Upload"),
+                  leading: Icon(Icons.developer_mode),
+                  onTap: testUpload,
+                ),
+                new ListTile(
+                  title: new RaisedButton(
+                    child: new Text("Sign Out"),
+                    color: Colors.red,
+                    textColor: Colors.white,
+                    onPressed: signOutBottomSheetMenu,
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluro/fluro.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:vc_deca/user_info.dart';
@@ -36,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
         name = _name;
         email = _email;
         userID = user.uid;
-        role = "user";
+        role = "Member";
 
         databaseRef.child("users").child(userID).update({
           "name": name,
@@ -46,7 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
           "group": chapGroupID
         });
 
-        Navigator.of(context).pushReplacementNamed('/registered');
+        router.navigateTo(context,'/registered', transition: TransitionType.fadeIn, clearStack: true);
       }
       catch (error) {
         print("Error: $error");
@@ -153,7 +154,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 splashColor: Colors.lightBlueAccent,
                 onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/toLogin');
+                  router.navigateTo(context,'/toLogin', transition: TransitionType.native);
                 },
               )
             ],

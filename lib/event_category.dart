@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vc_deca/user_info.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:fluro/fluro.dart';
 
 class EventCategoryPage extends StatefulWidget {
   @override
@@ -63,7 +64,7 @@ class _EventCategoryPageState extends State<EventCategoryPage> {
                     onTap: () {
                       selectedEvent = eventList[index].key;
                       print(selectedEvent);
-                      Navigator.of(context).pushNamed('/event');
+                      router.navigateTo(context, '/event', transition: TransitionType.native);
                     },
                     child: new Card(
                       child: new Container(

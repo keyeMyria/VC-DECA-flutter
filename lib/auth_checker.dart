@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:vc_deca/register_page.dart';
-import 'package:vc_deca/tab_bar_controller.dart';
 import 'dart:async';
-
+import 'package:fluro/fluro.dart';
 import 'package:vc_deca/user_info.dart';
 
 class AuthChecker extends StatefulWidget {
@@ -30,13 +28,12 @@ class _AuthCheckerState extends State<AuthChecker> {
         name = userInfo["name"];
         chapGroupID = userInfo["group"];
       });
-
-      Navigator.of(context).pushReplacementNamed('/logged');
+      router.navigateTo(context, '/logged', transition: TransitionType.fadeIn, replace: true);
     }
     else {
       //User log required
       print("User Not Logged");
-      Navigator.of(context).pushReplacementNamed('/notLogged');
+      router.navigateTo(context, '/notLogged', transition: TransitionType.fadeIn, replace: true);
     }
   }
 

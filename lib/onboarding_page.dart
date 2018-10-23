@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vc_deca/register_page.dart';
+import 'package:vc_deca/user_info.dart';
 import 'package:intro_views_flutter/Models/page_view_model.dart';
 import 'package:intro_views_flutter/intro_views_flutter.dart';
+import 'package:fluro/fluro.dart';
 
 class OnboardingPage extends StatefulWidget {
   @override
@@ -113,7 +114,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         child: new IntroViewsFlutter(
           pages,
           onTapDoneButton: () {
-            Navigator.of(context).pushReplacementNamed('/toRegister');
+            router.navigateTo(context,'/toRegister', transition: TransitionType.fadeIn, clearStack: true);
           },
           columnMainAxisAlignment: MainAxisAlignment.start,
           showSkipButton: false, //Whether you want to show the skip button or not.
