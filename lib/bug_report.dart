@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 class BugReportPage extends StatefulWidget {
   @override
@@ -10,7 +9,7 @@ class _BugReportPageState extends State<BugReportPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WebviewScaffold(
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: new Text("Report a Bug"),
@@ -21,7 +20,6 @@ class _BugReportPageState extends State<BugReportPage> {
             )
         ),
       ),
-      url: "www.google.com",
     );
   }
 }

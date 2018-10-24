@@ -29,30 +29,36 @@ class _UserDrawerState extends State<UserDrawer> {
     showModalBottomSheet(
         context: context,
         builder: (builder){
-          return new Container(
-            child: new Container(
-              height: 170.0,
-              padding: EdgeInsets.all(8.0),
-                child: new Column(
-                  children: <Widget>[
-                    new Text("Are you sure you want to sign out?", style: TextStyle(fontSize: 17.0),),
-                    new Padding(padding: EdgeInsets.all(5.0)),
-                    new FlatButton(
-                      child: new Text("Sign Out", style: TextStyle(fontSize: 17.0),),
-                      textColor: Colors.red,
-                      onPressed: () {
-                        FirebaseAuth.instance.signOut();
-                        Navigator.of(context).pushReplacementNamed('/notLogged');
-                      },
-                    ),
-                    new FlatButton(
-                      child: new Text("Cancel", style: TextStyle(fontSize: 17.0),),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    )
-                  ],
-                )),
+          return SafeArea(
+            child: new Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                new ListTile(
+                  title: new Text('Are you sure you want to sign out?'),
+                ),
+                new ListTile(
+                  leading: new Icon(Icons.check),
+                  title: new Text('Yes, sign me out!'),
+                  onTap: () {
+                    FirebaseAuth.instance.signOut();
+                    Navigator.of(context).pushReplacementNamed('/notLogged');
+                  },
+                  onLongPress: () {
+                    print("long press");
+                  },
+                ),
+                new ListTile(
+                  leading: new Icon(Icons.clear),
+                  title: new Text('Cancel'),
+                  onTap: () {
+                    router.pop(context);
+                  },
+                  onLongPress: () {
+
+                  },
+                ),
+              ],
+            ),
           );
         }
     );
