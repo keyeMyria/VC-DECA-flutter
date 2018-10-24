@@ -101,7 +101,6 @@ class _UserDrawerState extends State<UserDrawer> {
                   title: new Text(role),
                   leading: Icon(Icons.verified_user),
                 ),
-
                 new ListTile(
                   title: new Text("Help"),
                   leading: Icon(Icons.help),
@@ -109,6 +108,9 @@ class _UserDrawerState extends State<UserDrawer> {
                 new ListTile(
                   title: new Text("Report a Bug"),
                   leading: Icon(Icons.bug_report),
+                  onTap: () {
+                    router.navigateTo(context, '/bugReport', transition: TransitionType.nativeModal);
+                  },
                 ),
                 new ListTile(
                   title: new Text("Test Firebase Upload"),

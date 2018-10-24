@@ -182,41 +182,35 @@ class _TabBarControllerState extends State<TabBarController> {
 
   void pageChanged(int index) {
     setState(() {
+      currentTabButton = null;
       currentTab = index;
       if (currentTab == 1) {
         title = "Schedule";
-        currentTabButton = null;
-        if (role == "Admin") {
-          currentButton = currentTabButton;
-        }
-      } else if (currentTab == 2) {
+      }
+      else if (currentTab == 2) {
         title = "Chat";
-        currentTabButton = null;
-        currentTabButton = new FloatingActionButton(
-          backgroundColor: Colors.lightBlue,
-          child: Icon(Icons.group_add),
-          onPressed: createGroupDialog,
-        );
         if (role == "Admin") {
-          currentButton = currentTabButton;
-        }
-      } else if (currentTab == 3) {
-        title = "Settings";
-        currentTabButton = null;
-        if (role == "Admin") {
-          currentButton = currentTabButton;
-        }
-      } else {
-        title = "VC DECA";
-        currentTabButton = new FloatingActionButton(
-          backgroundColor: Colors.lightBlue,
-          child: Icon(Icons.add),
-          onPressed: addAlertDialog,
-        );
-        if (role != "Member") {
-          currentButton = currentTabButton;
+          currentTabButton = new FloatingActionButton(
+            backgroundColor: Colors.lightBlue,
+            child: Icon(Icons.group_add),
+            onPressed: createGroupDialog,
+          );
         }
       }
+      else if (currentTab == 3) {
+        title = "Settings";
+      }
+      else {
+        title = "VC DECA";
+        if (role != "Member") {
+          currentTabButton = new FloatingActionButton(
+            backgroundColor: Colors.lightBlue,
+            child: Icon(Icons.add),
+            onPressed: addAlertDialog,
+          );
+        }
+      }
+      currentButton = currentTabButton;
     });
   }
 

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:vc_deca/bug_report.dart';
 import 'package:vc_deca/network_check_again.dart';
 import 'package:vc_deca/user_info.dart';
 import 'package:flutter/material.dart';
@@ -88,6 +89,10 @@ void main() {
 
   router.define('/eventCategory', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return new EventCategoryPage();
+  }));
+
+  router.define('/bugReport', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new BugReportPage();
   }));
 
   runApp(new MaterialApp(

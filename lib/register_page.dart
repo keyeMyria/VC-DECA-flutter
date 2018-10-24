@@ -107,7 +107,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     labelText: "Email",
                     hintText: "Enter your email"
                 ),
-                autocorrect: true,
+                autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
                 textCapitalization: TextCapitalization.none,
                 onChanged: emailField,
@@ -118,7 +118,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     labelText: "Password",
                     hintText: "Enter a password"
                 ),
-                autocorrect: true,
+                autocorrect: false,
                 keyboardType: TextInputType.text,
                 textCapitalization: TextCapitalization.none,
                 obscureText: true,
@@ -126,11 +126,11 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               new TextField(
                 decoration: InputDecoration(
-                    icon: new Icon(Icons.person),
+                    icon: new Icon(Icons.lock),
                     labelText: "Confirm Password",
                     hintText: "Confirm your password"
                 ),
-                autocorrect: true,
+                autocorrect: false,
                 keyboardType: TextInputType.text,
                 textCapitalization: TextCapitalization.none,
                 obscureText: true,

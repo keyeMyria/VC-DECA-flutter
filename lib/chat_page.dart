@@ -12,7 +12,6 @@ class _ChatPageState extends State<ChatPage> {
   
   final databaseRef = FirebaseDatabase.instance.reference();
 
-  var visibleChat = new ListTile();
   var _visible = false;
 
   String joinGroup = "";
@@ -102,14 +101,6 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     super.initState();
     if (role != "Member") {
-      visibleChat = new ListTile(
-        title: Text("Officer Chat"),
-        onTap: toOfficerChat,
-        trailing: new Icon(
-          Icons.arrow_forward_ios,
-          color: Colors.lightBlue,
-        ),
-      );
       _visible = true;
     }
   }
@@ -148,6 +139,21 @@ class _ChatPageState extends State<ChatPage> {
               color: Colors.lightBlue,
             ),
           ),
+          new Divider(
+            height: 0.0,
+            color: Colors.lightBlue,
+          ),
+          new Visibility(
+            visible: _visible,
+            child: new ListTile(
+              title: Text("Officer Chat"),
+              onTap: toOfficerChat,
+              trailing: new Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.lightBlue,
+              ),
+            ),
+          ),
           new Visibility(
             visible: _visible,
             child: new Divider(
@@ -155,7 +161,6 @@ class _ChatPageState extends State<ChatPage> {
               color: Colors.lightBlue,
             ),
           ),
-          visibleChat
         ],
       ),
     );

@@ -71,7 +71,7 @@ class _LoginPage extends State<LoginPage> {
                     labelText: "Email",
                     hintText: "Enter your email"
                 ),
-                autocorrect: true,
+                autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
                 textCapitalization: TextCapitalization.none,
                 onChanged: emailField,
@@ -82,7 +82,7 @@ class _LoginPage extends State<LoginPage> {
                     labelText: "Password",
                     hintText: "Enter a password"
                 ),
-                autocorrect: true,
+                autocorrect: false,
                 keyboardType: TextInputType.text,
                 textCapitalization: TextCapitalization.none,
                 obscureText: true,
