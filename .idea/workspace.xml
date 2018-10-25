@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14187adf-7b07-4a20-8090-f6178b26a00c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ios/Runner/Runner.entitlements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vc_deca.iml" beforeDir="false" afterPath="$PROJECT_DIR$/vc_deca.iml" afterDir="false" />
-    </list>
+    <list default="true" id="14187adf-7b07-4a20-8090-f6178b26a00c" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +123,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dart" value="28338" />
-          <entry key="gradle" value="24" />
+          <entry key="gradle" value="25" />
           <entry key="md" value="46" />
           <entry key="yaml" value="257" />
         </counts>
@@ -144,7 +131,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Dart" value="28338" />
-          <entry key="Groovy" value="24" />
+          <entry key="Groovy" value="25" />
           <entry key="Markdown" value="46" />
           <entry key="YAML" value="257" />
         </counts>
@@ -157,7 +144,7 @@
           <entry key="JAVA" value="1" />
           <entry key="JSON" value="2" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="YAML" value="22" />
         </counts>
       </usages-collector>
@@ -165,6 +152,7 @@
         <counts>
           <entry key="Podfile" value="1" />
           <entry key="dart" value="148" />
+          <entry key="flutter-plugins" value="1" />
           <entry key="gradle" value="7" />
           <entry key="java" value="1" />
           <entry key="json" value="2" />
@@ -196,8 +184,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="329">
+              <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -256,8 +244,8 @@
         <option value="$PROJECT_DIR$/lib/legal_page.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_database/lib/ui/firebase_animated_list.dart" />
-        <option value="$PROJECT_DIR$/android/app/build.gradle" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/android/app/build.gradle" />
       </list>
     </option>
   </component>
@@ -377,12 +365,12 @@
       <workItem from="1540411389718" duration="5197000" />
       <workItem from="1540432166119" duration="14540000" />
       <workItem from="1540490642148" duration="3435000" />
-      <workItem from="1540508880299" duration="2014000" />
+      <workItem from="1540508880299" duration="2217000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93932000" />
+    <option name="totallyTimeSpent" value="94135000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,8 +383,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1500" height="1112" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985465" visible="true" weight="0.20644718" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985465" visible="true" weight="0.20644718" />
       <window_info id="Structure" order="1" sideWeight="0.5007278" side_tool="true" weight="0.24948876" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -417,7 +406,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.39711934" side_tool="true" weight="0.2689243" />
       <window_info anchor="bottom" id="Logcat" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32968128" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32768923" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32768923" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49862826" weight="0.32669324" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -488,13 +477,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../flutter/packages/flutter/lib/src/material/drawer.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="84" column="8" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-1.0.4/lib/src/database_reference.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -823,10 +805,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.flutter-plugins">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="329">
+          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
         </state>
       </provider>
     </entry>
