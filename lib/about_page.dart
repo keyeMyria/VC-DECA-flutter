@@ -101,6 +101,8 @@ class _AboutPageState extends State<AboutPage> {
                   ],
                 ),
               ),
+              new Padding(padding: EdgeInsets.all(16.0)),
+              new Text("© Bharat Kathi 2018", style: TextStyle(color: Colors.grey),)
             ],
           ),
         ),

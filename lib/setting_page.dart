@@ -111,9 +111,19 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 new Divider(height: 0.0, color: Colors.lightBlue),
                 new ListTile(
+                  title: new Text("Help"),
+                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
+                  onTap: () {
+                    router.navigateTo(context, '/helpPage', transition: TransitionType.native);
+                  },
+                ),
+                new Divider(height: 0.0, color: Colors.lightBlue),
+                new ListTile(
                   title: new Text("Legal"),
                   trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
-                  onTap: () {},
+                  onTap: () {
+                    router.navigateTo(context, '/legalPage', transition: TransitionType.native);
+                  },
                 ),
                 new Divider(height: 0.0, color: Colors.lightBlue),
                 new ListTile(
@@ -172,7 +182,9 @@ class _SettingsPageState extends State<SettingsPage> {
                 new ListTile(
                   title: new Text("Report a Bug"),
                   trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
-                  onTap: () {},
+                  onTap: () {
+                    router.navigateTo(context, '/bugReport', transition: TransitionType.native);
+                  },
                 )
               ],
             ),

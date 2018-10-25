@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:vc_deca/about_page.dart';
 import 'package:vc_deca/bug_report.dart';
+import 'package:vc_deca/help_page.dart';
+import 'package:vc_deca/legal_page.dart';
 import 'package:vc_deca/network_check_again.dart';
 import 'package:vc_deca/user_info.dart';
 import 'package:flutter/material.dart';
@@ -98,6 +100,14 @@ void main() {
 
   router.define('/aboutPage', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
     return new AboutPage();
+  }));
+
+  router.define('/legalPage', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new LegalPage();
+  }));
+
+  router.define('/helpPage', handler: new Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+    return new HelpPage();
   }));
 
   runApp(new MaterialApp(
