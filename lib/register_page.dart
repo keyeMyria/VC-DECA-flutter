@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
           "email": email,
           "role": role,
           "userID": userID,
-          "group": chapGroupID
+          "group": "Not in a Group"
         });
 
         router.navigateTo(context,'/registered', transition: TransitionType.fadeIn, clearStack: true);

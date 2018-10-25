@@ -68,6 +68,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Container(
+      color: Colors.white,
       padding: EdgeInsets.all(16.0),
       child: ListView.builder(
         itemCount: alertList.length,

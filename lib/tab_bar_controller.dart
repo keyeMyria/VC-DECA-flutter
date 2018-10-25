@@ -218,6 +218,19 @@ class _TabBarControllerState extends State<TabBarController> {
   void initState() {
     super.initState();
     pageController = new PageController();
+    databaseRef.child("stableVersion").once().then((DataSnapshot snapshot) {
+      var stable = snapshot.value;
+      print("Current Version: $appVersion");
+      print("Stable Version: $stable");
+      if (appVersion < stable) {
+        print("OUTDATED APP!");
+        appStatus = " [OUTDATED]";
+      }
+      else if (appVersion > stable) {
+        print("BETA APP!");
+        appStatus = " [BETA]";
+      }
+    });
   }
 
   @override
@@ -236,6 +249,7 @@ class _TabBarControllerState extends State<TabBarController> {
         floatingActionButton: currentButton,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          fixedColor: Colors.lightBlue,
           currentIndex: currentTab,
           onTap: tabTapped,
           items: [
@@ -255,7 +269,6 @@ class _TabBarControllerState extends State<TabBarController> {
           child: UserDrawer(),
         ),
         body: new Container(
-          color: Colors.white,
           child: new PageView(
             onPageChanged: pageChanged,
             controller: pageController,

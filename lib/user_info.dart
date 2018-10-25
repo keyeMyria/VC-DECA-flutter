@@ -7,9 +7,11 @@ double appVersion = 1.0;
 String name = "";
 String email = "";
 String userID = "";
-String chapGroupID = "none";
+String chapGroupID = "Not in a Group";
 
-String role = "";
+String role = "Member";
+
+String appStatus = "";
 
 String selectedAlert = "";
 String selectedYear = "Please select a conference";

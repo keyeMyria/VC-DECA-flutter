@@ -64,6 +64,7 @@ class _SchedulePageState extends State<SchedulePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
       padding: EdgeInsets.all(16.0),
       child: new Column(
         children: <Widget>[

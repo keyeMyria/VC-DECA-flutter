@@ -21,7 +21,7 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   void toChaperoneChat() {
-    if (chapGroupID != "none") {
+    if (chapGroupID != "Not in a Group") {
       print("Already in a group!");
       router.navigateTo(context, '/chapChat', transition: TransitionType.native);
     }
