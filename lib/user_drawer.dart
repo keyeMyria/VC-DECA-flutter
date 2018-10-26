@@ -72,7 +72,7 @@ class _UserDrawerState extends State<UserDrawer> {
         children: <Widget>[
           new Container(
               padding: EdgeInsets.all(16.0),
-              color: Colors.lightBlue,
+              color: Colors.blue,
               height: 200.0,
               width: 1000.0,
               child: new Column(

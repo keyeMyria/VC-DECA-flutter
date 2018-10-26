@@ -36,7 +36,7 @@ class _AlertPageState extends State<AlertPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text("Details"),
         textTheme: TextTheme(
             title: TextStyle(
@@ -68,7 +68,7 @@ class _AlertPageState extends State<AlertPage> {
                 style: TextStyle(
                   fontWeight: FontWeight.normal,
                   fontStyle: FontStyle.italic,
-                  color: Colors.lightBlue,
+                  color: Colors.blue,
                   fontSize: 15.0,
                 ),
               ),

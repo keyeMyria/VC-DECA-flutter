@@ -62,7 +62,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     name,
                     style: TextStyle(
                         fontSize: 25.0,
-                        color: Colors.lightBlue,
+                        color: Colors.blue,
                         fontWeight: FontWeight.bold
                     ),
                   ),
@@ -100,32 +100,32 @@ class _SettingsPageState extends State<SettingsPage> {
               children: <Widget>[
                 new Container(
                   padding: EdgeInsets.all(16.0),
-                  child: new Text("General", style: TextStyle(color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+                  child: new Text("General", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
                 ),
                 new ListTile(
                   title: new Text("About"),
-                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
+                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.blue),
                   onTap: () {
                     router.navigateTo(context, '/aboutPage', transition: TransitionType.native);
                   },
                 ),
-                new Divider(height: 0.0, color: Colors.lightBlue),
+                new Divider(height: 0.0, color: Colors.blue),
                 new ListTile(
                   title: new Text("Help"),
-                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
+                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.blue),
                   onTap: () {
                     router.navigateTo(context, '/helpPage', transition: TransitionType.native);
                   },
                 ),
-                new Divider(height: 0.0, color: Colors.lightBlue),
+                new Divider(height: 0.0, color: Colors.blue),
                 new ListTile(
                   title: new Text("Legal"),
-                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
+                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.blue),
                   onTap: () {
                     router.navigateTo(context, '/legalPage', transition: TransitionType.native);
                   },
                 ),
-                new Divider(height: 0.0, color: Colors.lightBlue),
+                new Divider(height: 0.0, color: Colors.blue),
                 new ListTile(
                   title: new Text("\nDelete Account\n", style: TextStyle(color: Colors.red),),
                   subtitle: new Text("Deleting your VC DECA Account will remove all the data linked to your account as well. You will be required to create a new account in order to sign in again.\n", style: TextStyle(fontSize: 12.0)),
@@ -141,23 +141,23 @@ class _SettingsPageState extends State<SettingsPage> {
               children: <Widget>[
                 new Container(
                   padding: EdgeInsets.all(16.0),
-                  child: new Text("Preferences", style: TextStyle(color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+                  child: new Text("Preferences", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
                 ),
                 new ListTile(
                   title: new Text("Push Notifications"),
                   trailing: new Switch(
                     value: true,
-                    activeColor: Colors.lightBlue,
+                    activeColor: Colors.blue,
                     onChanged: (bool isOn) {},
                   ),
                 ),
-                new Divider(height: 0.0, color: Colors.lightBlue),
+                new Divider(height: 0.0, color: Colors.blue),
                 new ListTile(
                   title: new Text("Dark Mode"),
                   subtitle: new Text("Coming Soon!"),
                   trailing: new Switch(
                     value: false,
-                    activeColor: Colors.lightBlue,
+                    activeColor: Colors.blue,
                     onChanged: (bool isOn) {},
                   ),
                 ),
@@ -171,17 +171,17 @@ class _SettingsPageState extends State<SettingsPage> {
               children: <Widget>[
                 new Container(
                   padding: EdgeInsets.all(16.0),
-                  child: new Text("Feedback", style: TextStyle(color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+                  child: new Text("Feedback", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
                 ),
                 new ListTile(
                   title: new Text("Provide Feedback"),
-                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
+                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.blue),
                   onTap: () {},
                 ),
-                new Divider(height: 0.0, color: Colors.lightBlue),
+                new Divider(height: 0.0, color: Colors.blue),
                 new ListTile(
                   title: new Text("Report a Bug"),
-                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.lightBlue),
+                  trailing: new Icon(Icons.arrow_forward_ios, color: Colors.blue),
                   onTap: () {
                     router.navigateTo(context, '/bugReport', transition: TransitionType.native);
                   },

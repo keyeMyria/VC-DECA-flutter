@@ -77,7 +77,7 @@ class _EventPageState extends State<EventPage> {
 
   Icon addCheckmark(String title) {
     if (title == selectedYear) {
-      return Icon(Icons.check, color: Colors.lightBlue);
+      return Icon(Icons.check, color: Colors.blue);
     }
     else {
       return null;
@@ -134,7 +134,7 @@ class _EventPageState extends State<EventPage> {
               child: new Column(
                 children: <Widget>[
                   addEventSelection("2019 SVDC"),
-                  new Divider(color: Colors.lightBlue, height: 0.0),
+                  new Divider(color: Colors.blue, height: 0.0),
                   addEventSelection("2019 SCDC"),
                 ],
               )
@@ -149,7 +149,7 @@ class _EventPageState extends State<EventPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text(categoryShort),
         textTheme: TextTheme(
             title: TextStyle(
@@ -187,7 +187,7 @@ class _EventPageState extends State<EventPage> {
               new Text(
                 ("$eventLocation - $selectedYear"),
                 style: TextStyle(
-                  color: Colors.lightBlue,
+                  color: Colors.blue,
                   fontWeight: FontWeight.normal,
                   fontStyle: FontStyle.italic,
                   fontSize: 17.0,
@@ -202,7 +202,7 @@ class _EventPageState extends State<EventPage> {
                 ),
               ),
               new Divider(
-                color: Colors.lightBlue,
+                color: Colors.blue,
                 height: 20.0,
               ),
               new Text(
@@ -223,7 +223,7 @@ class _EventPageState extends State<EventPage> {
                           backdrop,
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            color: Colors.lightBlue,
+                            color: Colors.blue,
                             fontSize: 12.0,
                           ),
                         ),
@@ -244,7 +244,7 @@ class _EventPageState extends State<EventPage> {
                                   new Container(
                                       child: new Text(
                                         eventList[index].eventTime,
-                                        style: TextStyle(color: Colors.lightBlue, fontSize: 17.0, fontWeight: FontWeight.bold),
+                                        style: TextStyle(color: Colors.blue, fontSize: 17.0, fontWeight: FontWeight.bold),
                                       )
                                   ),
                                   new Padding(padding: EdgeInsets.all(5.0)),
@@ -267,7 +267,7 @@ class _EventPageState extends State<EventPage> {
                                   new Container(
                                       child: new Icon(
                                         Icons.arrow_forward_ios,
-                                        color: Colors.lightBlue,
+                                        color: Colors.blue,
                                       )
                                   ),
                                 ],

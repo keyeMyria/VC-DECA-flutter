@@ -11,7 +11,7 @@ class _BugReportPageState extends State<BugReportPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text("Report a Bug"),
         textTheme: TextTheme(
             title: TextStyle(

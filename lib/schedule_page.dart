@@ -88,11 +88,11 @@ class _SchedulePageState extends State<SchedulePage> {
                         title: new Text(
                             eventList[index].key
                         ),
-                        trailing: Icon(Icons.arrow_forward_ios, color: Colors.lightBlue,),
+                        trailing: Icon(Icons.arrow_forward_ios, color: Colors.blue,),
                       ),
                       new Divider(
                         height: 8.0,
-                        color: Colors.lightBlue,
+                        color: Colors.blue,
                       ),
                     ],
                   ),

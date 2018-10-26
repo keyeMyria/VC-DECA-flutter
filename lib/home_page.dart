@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                     new Container(
                         child: new Icon(
                           Icons.notifications_active,
-                          color: Colors.lightBlue,
+                          color: Colors.blue,
                         )
                     ),
                     new Padding(padding: EdgeInsets.all(5.0)),
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                     new Container(
                         child: new Icon(
                           Icons.arrow_forward_ios,
-                          color: Colors.lightBlue,
+                          color: Colors.blue,
                         )
                     ),
                   ],

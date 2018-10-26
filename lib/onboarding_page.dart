@@ -14,7 +14,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   final pages = [
     new PageViewModel(
-        pageColor: Colors.lightBlue,
+        pageColor: Colors.blue,
         iconImageAssetPath: 'images/events.png',
         iconColor: null,
         bubbleBackgroundColor: null,
@@ -33,7 +33,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
         )
     ),
     new PageViewModel(
-      pageColor: Colors.lightBlue,
+      pageColor: Colors.blue,
       iconImageAssetPath: 'images/alert.png',
       iconColor: null,
       bubbleBackgroundColor: null,
@@ -50,7 +50,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
     ),
     new PageViewModel(
-      pageColor: Colors.lightBlue,
+      pageColor: Colors.blue,
       iconImageAssetPath: 'images/map.png',
       iconColor: null,
       bubbleBackgroundColor: null,
@@ -67,7 +67,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
     ),
     new PageViewModel(
-      pageColor: Colors.lightBlue,
+      pageColor: Colors.blue,
       iconImageAssetPath: 'images/platform.png',
       iconColor: null,
       bubbleBackgroundColor: null,
@@ -87,7 +87,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       textStyle: TextStyle(fontFamily: 'Regular', color: Colors.white),
     ),
     new PageViewModel(
-      pageColor: Colors.lightBlue,
+      pageColor: Colors.blue,
       iconImageAssetPath: 'images/logo_white_trans.png',
       iconColor: null,
       bubbleBackgroundColor: null,
@@ -109,7 +109,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      color: Colors.lightBlue,
+      color: Colors.blue,
       child: new SafeArea(
         child: new IntroViewsFlutter(
           pages,

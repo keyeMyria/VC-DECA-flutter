@@ -101,7 +101,7 @@ class _ChaperoneChatPageState extends State<ChaperoneChatPage> {
 
   Color getColor(String messageAuthor) {
     if (messageAuthor == name) {
-      return Colors.lightBlue;
+      return Colors.blue;
     }
     else {
       return Colors.black;
@@ -118,7 +118,7 @@ class _ChaperoneChatPageState extends State<ChaperoneChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text("Chaperone Group"),
         textTheme: TextTheme(
             title: TextStyle(

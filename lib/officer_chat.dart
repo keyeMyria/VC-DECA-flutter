@@ -101,7 +101,7 @@ class _OfficerChatPageState extends State<OfficerChatPage> {
 
   Color getColor(String messageAuthor) {
     if (messageAuthor == name) {
-      return Colors.lightBlue;
+      return Colors.blue;
     }
     else {
       return Colors.black;
@@ -118,7 +118,7 @@ class _OfficerChatPageState extends State<OfficerChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text("Officers"),
         textTheme: TextTheme(
             title: TextStyle(

@@ -10,7 +10,7 @@ class _LegalPageState extends State<LegalPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text("Legal"),
         textTheme: TextTheme(
             title: TextStyle(

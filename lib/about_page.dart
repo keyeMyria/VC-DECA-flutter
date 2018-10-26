@@ -28,7 +28,7 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text("About"),
         textTheme: TextTheme(
             title: TextStyle(
@@ -48,18 +48,18 @@ class _AboutPageState extends State<AboutPage> {
                   children: <Widget>[
                     new Container(
                       padding: EdgeInsets.all(16.0),
-                      child: new Text("Device", style: TextStyle(color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+                      child: new Text("Device", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
                     ),
                     new ListTile(
                       title: new Text("App Version"),
                       trailing: new Text("$appVersion$appStatus", style: TextStyle(fontSize: 16.0)),
                     ),
-                    new Divider(height: 0.0, color: Colors.lightBlue),
+                    new Divider(height: 0.0, color: Colors.blue),
                     new ListTile(
                       title: new Text("Device Name"),
                       trailing: new Text("$deviceName", style: TextStyle(fontSize: 16.0)),
                     ),
-                    new Divider(height: 0.0, color: Colors.lightBlue),
+                    new Divider(height: 0.0, color: Colors.blue),
                     new ListTile(
                       title: new Text("Platform"),
                       trailing: new Text("$devicePlatform", style: TextStyle(fontSize: 16.0)),
@@ -74,18 +74,18 @@ class _AboutPageState extends State<AboutPage> {
                   children: <Widget>[
                     new Container(
                       padding: EdgeInsets.all(16.0),
-                      child: new Text("Credits", style: TextStyle(color: Colors.lightBlue, fontWeight: FontWeight.bold),),
+                      child: new Text("Credits", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
                     ),
                     new ListTile(
                       title: new Text("Bharat Kathi"),
                       subtitle: new Text("App Development"),
                     ),
-                    new Divider(height: 0.0, color: Colors.lightBlue),
+                    new Divider(height: 0.0, color: Colors.blue),
                     new ListTile(
                       title: new Text("Myron Chan"),
                       subtitle: new Text("App Design"),
                     ),
-                    new Divider(height: 0.0, color: Colors.lightBlue),
+                    new Divider(height: 0.0, color: Colors.blue),
                     new ListTile(
                       title: new Text("Kashyap Chaturvedula"),
                     ),

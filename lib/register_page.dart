@@ -75,7 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: Text(
           "VC DECA",
           style: TextStyle(
@@ -140,19 +140,19 @@ class _RegisterPageState extends State<RegisterPage> {
               new RaisedButton(
                 child: new Text("Create Account"),
                 onPressed: register,
-                color: Colors.lightBlue,
+                color: Colors.blue,
                 textColor: Colors.white,
-                highlightColor: Colors.lightBlueAccent,
+                highlightColor: Colors.blue,
               ),
               new Padding(padding: EdgeInsets.all(16.0)),
               new FlatButton(
                 child: new Text(
                   "Already have an account?",
                   style: TextStyle(
-                    color: Colors.lightBlue,
+                    color: Colors.blue,
                   ),
                 ),
-                splashColor: Colors.lightBlueAccent,
+                splashColor: Colors.blue,
                 onPressed: () {
                   router.navigateTo(context,'/toLogin', transition: TransitionType.native);
                 },

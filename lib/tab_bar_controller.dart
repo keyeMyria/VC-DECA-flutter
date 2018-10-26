@@ -194,7 +194,7 @@ class _TabBarControllerState extends State<TabBarController> {
         title = "Chat";
         if (role == "Admin") {
           currentTabButton = new FloatingActionButton(
-            backgroundColor: Colors.lightBlue,
+            backgroundColor: Colors.blue,
             child: Icon(Icons.group_add),
             onPressed: createGroupDialog,
           );
@@ -207,7 +207,7 @@ class _TabBarControllerState extends State<TabBarController> {
         title = "VC DECA";
         if (role != "Member") {
           currentTabButton = new FloatingActionButton(
-            backgroundColor: Colors.lightBlue,
+            backgroundColor: Colors.blue,
             child: Icon(Icons.add),
             onPressed: addAlertDialog,
           );
@@ -272,7 +272,7 @@ class _TabBarControllerState extends State<TabBarController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
+          backgroundColor: Colors.blue,
           title: new Text(title),
           textTheme: TextTheme(
             title: TextStyle(
@@ -284,7 +284,7 @@ class _TabBarControllerState extends State<TabBarController> {
         floatingActionButton: currentButton,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          fixedColor: Colors.lightBlue,
+          fixedColor: Colors.blue,
           currentIndex: currentTab,
           onTap: tabTapped,
           items: [

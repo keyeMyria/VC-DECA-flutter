@@ -120,12 +120,12 @@ class _ChatPageState extends State<ChatPage> {
             },
             trailing: new Icon(
               Icons.arrow_forward_ios,
-              color: Colors.lightBlue,
+              color: Colors.blue,
             ),
           ),
           new Divider(
             height: 0.0,
-            color: Colors.lightBlue,
+            color: Colors.blue,
           ),
           new ListTile(
             title: Text("Chaperone Group"),
@@ -136,12 +136,12 @@ class _ChatPageState extends State<ChatPage> {
             },
             trailing: new Icon(
               Icons.arrow_forward_ios,
-              color: Colors.lightBlue,
+              color: Colors.blue,
             ),
           ),
           new Divider(
             height: 0.0,
-            color: Colors.lightBlue,
+            color: Colors.blue,
           ),
           new Visibility(
             visible: _visible,
@@ -150,7 +150,7 @@ class _ChatPageState extends State<ChatPage> {
               onTap: toOfficerChat,
               trailing: new Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.lightBlue,
+                color: Colors.blue,
               ),
             ),
           ),
@@ -158,7 +158,7 @@ class _ChatPageState extends State<ChatPage> {
             visible: _visible,
             child: new Divider(
               height: 0.0,
-              color: Colors.lightBlue,
+              color: Colors.blue,
             ),
           ),
         ],

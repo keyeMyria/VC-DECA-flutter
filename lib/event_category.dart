@@ -41,7 +41,7 @@ class _EventCategoryPageState extends State<EventCategoryPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text(selectedCategory),
         textTheme: TextTheme(
             title: TextStyle(
@@ -75,7 +75,7 @@ class _EventCategoryPageState extends State<EventCategoryPage> {
                             new Container(
                                 child: new Text(
                                   eventList[index].eventShort,
-                                  style: TextStyle(color: Colors.lightBlue, fontSize: 17.0, fontWeight: FontWeight.bold),
+                                  style: TextStyle(color: Colors.blue, fontSize: 17.0, fontWeight: FontWeight.bold),
                                 )
                             ),
                             new Padding(padding: EdgeInsets.all(5.0)),
@@ -111,7 +111,7 @@ class _EventCategoryPageState extends State<EventCategoryPage> {
                             new Container(
                                 child: new Icon(
                                   Icons.arrow_forward_ios,
-                                  color: Colors.lightBlue,
+                                  color: Colors.blue,
                                 )
                             ),
                           ],

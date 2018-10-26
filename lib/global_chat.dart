@@ -101,7 +101,7 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
 
   Color getColor(String messageAuthor) {
     if (messageAuthor == name) {
-      return Colors.lightBlue;
+      return Colors.blue;
     }
     else {
       return Colors.black;
@@ -118,7 +118,7 @@ class _GlobalChatPageState extends State<GlobalChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Colors.blue,
         title: new Text("General"),
         textTheme: TextTheme(
             title: TextStyle(
