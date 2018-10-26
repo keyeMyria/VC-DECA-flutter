@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14187adf-7b07-4a20-8090-f6178b26a00c" name="Default Changelist" comment="" />
+    <list default="true" id="14187adf-7b07-4a20-8090-f6178b26a00c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/tab_bar_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/tab_bar_controller.dart" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,8 +115,8 @@
     <session id="625904742">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="29" />
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.closed" value="33" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="7" />
           <entry key="project.open.time.11" value="6" />
@@ -117,47 +125,51 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dart" value="28338" />
-          <entry key="gradle" value="25" />
+          <entry key="dart" value="28347" />
+          <entry key="gradle" value="46" />
           <entry key="md" value="46" />
+          <entry key="xml" value="1" />
           <entry key="yaml" value="257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Dart" value="28338" />
-          <entry key="Groovy" value="25" />
+          <entry key="Dart" value="28347" />
+          <entry key="Groovy" value="46" />
           <entry key="Markdown" value="46" />
+          <entry key="XML" value="1" />
           <entry key="YAML" value="257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Dart" value="148" />
-          <entry key="Groovy" value="7" />
+          <entry key="Dart" value="149" />
+          <entry key="Groovy" value="8" />
           <entry key="Image" value="5" />
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="3" />
           <entry key="JSON" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
+          <entry key="XML" value="1" />
           <entry key="YAML" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Podfile" value="1" />
-          <entry key="dart" value="148" />
+          <entry key="dart" value="149" />
           <entry key="flutter-plugins" value="1" />
-          <entry key="gradle" value="7" />
-          <entry key="java" value="1" />
+          <entry key="gradle" value="8" />
+          <entry key="java" value="3" />
           <entry key="json" value="2" />
           <entry key="md" value="1" />
           <entry key="png" value="5" />
+          <entry key="xml" value="1" />
           <entry key="yaml" value="22" />
         </counts>
       </usages-collector>
@@ -171,21 +183,15 @@
     <favorites_list name="VC-DECA-flutter" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
+        <entry file="file://$PROJECT_DIR$/lib/tab_bar_controller.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+            <state relative-caret-position="421">
+              <caret line="241" column="40" selection-start-line="241" selection-start-column="40" selection-end-line="241" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -235,7 +241,6 @@
         <option value="$PROJECT_DIR$/lib/home_page.dart" />
         <option value="$PROJECT_DIR$/lib/schedule_page.dart" />
         <option value="$PROJECT_DIR$/lib/user_info.dart" />
-        <option value="$PROJECT_DIR$/lib/tab_bar_controller.dart" />
         <option value="$PROJECT_DIR$/lib/event_category.dart" />
         <option value="$PROJECT_DIR$/lib/help_page.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
@@ -244,8 +249,10 @@
         <option value="$PROJECT_DIR$/lib/legal_page.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_database/lib/ui/firebase_animated_list.dart" />
-        <option value="$PROJECT_DIR$/android/build.gradle" />
         <option value="$PROJECT_DIR$/android/app/build.gradle" />
+        <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/lib/tab_bar_controller.dart" />
       </list>
     </option>
   </component>
@@ -288,7 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -296,16 +302,22 @@
               <item name="VC-DECA-flutter" type="b2602c69:ProjectViewProjectNode" />
               <item name="VC-DECA-flutter" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="VC-DECA-flutter" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VC-DECA-flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/android/build.gradle&#10;play-services-basement&#9;null&#9;null&#10;firebase_ap&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/ios/.symlinks/plugins/firebase_core/lib/src/firebase_app.dart&#10;firebase&#9;null&#9;null&#10;regis&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/lib/register_page.dart&#10;login&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/lib/login.dart&#10;user&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/lib/user_info.dart" />
+    <property name="SearchEverywhereHistoryKey" value="DependencyResolution&#9;null&#9;null&#10;play-services-basement&#9;null&#9;null&#10;firebase_ap&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/ios/.symlinks/plugins/firebase_core/lib/src/firebase_app.dart&#10;firebase&#9;null&#9;null&#10;regis&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/lib/register_page.dart&#10;login&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/lib/login.dart&#10;user&#9;FILE&#9;file:///Users/bharat/Documents/Flutter Apps/VC-DECA-flutter/lib/user_info.dart" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540508860863" />
@@ -365,12 +377,15 @@
       <workItem from="1540411389718" duration="5197000" />
       <workItem from="1540432166119" duration="14540000" />
       <workItem from="1540490642148" duration="3435000" />
-      <workItem from="1540508880299" duration="2217000" />
+      <workItem from="1540508880299" duration="4235000" />
+      <workItem from="1540513515443" duration="427000" />
+      <workItem from="1540513944649" duration="909000" />
+      <workItem from="1540516407088" duration="268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94135000" />
+    <option name="totallyTimeSpent" value="97757000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,9 +398,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1500" height="1112" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4985465" visible="true" weight="0.20644718" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4985465" visible="true" weight="0.20644718" />
       <window_info id="Structure" order="1" sideWeight="0.5007278" side_tool="true" weight="0.24948876" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -406,7 +420,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.39711934" side_tool="true" weight="0.2689243" />
       <window_info anchor="bottom" id="Logcat" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32968128" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32768923" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.32768923" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49862826" weight="0.32669324" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -477,20 +491,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-1.0.4/lib/src/database_reference.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../flutter/bin/cache/pkg/sky_engine/lib/ui/text.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="50" column="26" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/alert.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -701,19 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="124" column="58" selection-start-line="124" selection-start-column="58" selection-end-line="124" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tab_bar_controller.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,9 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="112" column="18" selection-start-line="112" selection-start-column="18" selection-end-line="112" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -752,9 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
           <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -766,13 +747,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core/lib/src/firebase_app.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#3231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/ios/Podfile">
       <provider selected="true" editor-type-id="text-editor" />
@@ -791,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -808,10 +776,44 @@
     <entry file="file://$PROJECT_DIR$/.flutter-plugins">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/java/com/example/vcdeca/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="51" lean-forward="true" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="43" column="16" lean-forward="true" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+        <state relative-caret-position="309">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tab_bar_controller.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="241" column="40" selection-start-line="241" selection-start-column="40" selection-end-line="241" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
